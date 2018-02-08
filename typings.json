@@ -1,0 +1,5 @@
+{
+    "globalDependencies": {
+        "jspdf-autotable": "file:./src/typings/jspdf/index.d.ts"
+    }
+}

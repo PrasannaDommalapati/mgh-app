@@ -1,0 +1,5 @@
+@import "../../../../scss/mixins/data-list";
+
+dl {
+  @include data-list-horizontal;
+}

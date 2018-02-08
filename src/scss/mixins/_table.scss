@@ -1,0 +1,82 @@
+@import '~@angular/material/theming';
+//@import '~@angular/material/tabs/tabs-common';
+//@import '~@angular/material/button/button-base';
+@import '../../app/component';
+
+$background: map-get($anywaste-theme, background);
+
+@mixin tbody {
+
+    border:       1px solid mat-color($background, status-bar);
+    border-width: 1px 0;
+
+    tr:not(.no-hover):hover, tr:focus {
+        //cursor:           pointer;
+        background-color: rgba(black, 0.12);
+    }
+
+    td {
+        white-space: nowrap;
+
+        &:not(:first-child):last-child {
+            text-align: right;
+        }
+    }
+
+    &.no-results {
+        td {
+            text-align: center;
+        }
+    }
+
+}
+
+@mixin table($hasElement:true) {
+
+    @if ($hasElement == true) {
+        min-width:       100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 12px;
+    }
+
+    thead {
+        th, td {
+            text-align: left;
+            &:not(:first-child):last-child {
+                text-align: right;
+            }
+        }
+        th {
+            font-weight: 500;
+            opacity:     0.6;
+        }
+    }
+
+    tbody {
+
+        @include tbody;
+    }
+}
+
+@mixin table-list {
+
+    .list {
+
+        md-card-content {
+            //font-size:   $mat-body-font-size-base;
+            //line-height: $mat-icon-button-size;
+            overflow-x:  auto;
+        }
+
+        md-card-actions {
+            text-align: center;
+            padding:    12px;
+        }
+
+        table {
+            @include table;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+@import '../scss/settings/_hotels';
+
+[routerLink] {
+
+  cursor: pointer;
+
+  &:hover, &:focus {
+    outline: none;
+  }
+}
+
+li {
+  a {
+    color: white;
+  }
+}
+
+[md-error] {
+  color: $error;
+  font-style: italic;
+}
+
+[md-warn], .warning {
+  background: $warn;
+}
+md-sidenav {
+  width:304px;
+  min-width:256px;
+  max-width:304px;
+}
+@import '../scss/layout/main';

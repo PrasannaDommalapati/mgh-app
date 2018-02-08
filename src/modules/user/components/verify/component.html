@@ -1,0 +1,27 @@
+<form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+    <section md-dialog-title>
+        <button md-tooltip="Close." md-dialog-close class="icon close"></button>
+        <h1>Verify Account</h1>
+    </section>
+
+    <section md-dialog-content>
+
+        <p>Please check your email to find your verification code</p>
+
+        <md-input-container>
+            <md-placeholder>Verification code</md-placeholder>
+            <input mdInput id="code" formControlName="code">
+        </md-input-container>
+
+        <p md-error *ngIf="error">{{ error }}</p>
+
+    </section>
+
+    <section md-dialog-actions align="end">
+        <button md-button [disabled]="!form.valid || loading" type="submit">
+            <i *ngIf="!loading" class="icon save"></i>
+            <i *ngIf="loading" class="icon refresh loading"></i>
+            Verify
+        </button>
+    </section>
+</form>

@@ -1,0 +1,50 @@
+<form novalidate [formGroup]="form" (ngSubmit)="onSubmit()" class="edit-address">
+    <section md-dialog-title>
+        <button md-tooltip="Close." md-dialog-close class="icon close"></button>
+        <h1>Edit Address</h1>
+    </section>
+
+    <section md-dialog-content>
+        <md-input-container>
+            <md-placeholder>Company Name</md-placeholder>
+            <input mdInput formControlName="name">
+        </md-input-container>
+        <md-input-container>
+            <md-placeholder>Address</md-placeholder>
+            <textarea mdInput rows="5" formControlName="address"></textarea>
+        </md-input-container>
+        <md-input-container>
+            <md-placeholder>Postcode</md-placeholder>
+            <input mdInput formControlName="postcode" class="uppercase">
+        </md-input-container>
+        <ng-container *ngIf="contactDetails">
+            <md-input-container>
+                <md-placeholder>Mobile</md-placeholder>
+                <input mdInput formControlName="mobile">
+            </md-input-container>
+            <md-input-container>
+                <md-placeholder>Telephone</md-placeholder>
+                <input mdInput formControlName="phone">
+            </md-input-container>
+            <md-input-container>
+                <md-placeholder>Email</md-placeholder>
+                <input mdInput formControlName="email">
+            </md-input-container>
+            <md-input-container>
+                <md-placeholder>Fax</md-placeholder>
+                <input mdInput formControlName="fax">
+            </md-input-container>
+        </ng-container>
+    </section>
+
+    <section md-dialog-actions align="end">
+        <button md-button md-dialog-close>
+            <i class="icon cancel"></i>
+            Cancel
+        </button>
+        <button md-button [disabled]="!form.valid" type="submit">
+            <i class="icon done"></i>
+            Done
+        </button>
+    </section>
+</form>

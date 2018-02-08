@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+    <title>Managing Group of Hotels</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="/assets/favicon.ico"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+
+        .loading-app {
+            position:   absolute;
+            top:        0;
+            bottom:     0;
+            left:       0;
+            right:      0;
+            background: #00acc1;
+        }
+
+        .loading-app h1 {
+            position:        absolute;
+            width:           40%;
+            height:          30%;
+            top:             50%;
+            left:            50%;
+            transform:       translate(-50%, -50%);
+            background:      url(/assets/hotels.png) center no-repeat;
+            background-size: contain;
+            text-indent:     -9999px
+        }
+
+        .loading-app h1 span {
+            width:       100%;
+            text-align:  center;
+            display:     block;
+            text-indent: 0;
+            position:    absolute;
+            top:         100%;
+            color:       #ffffff;
+            font-weight: 400;
+            font-size:   1.5rem;
+            line-height: 2;
+            font-family: Roboto, "Helvetica Neue", sans-serif
+        }
+
+        .loading-app .material-icons {
+            -webkit-animation: icon-spin 2s infinite linear;
+            animation:         icon-spin 2s infinite linear;
+            vertical-align:    middle;
+        }
+
+        @-webkit-keyframes icon-spin {
+            0% {
+                -webkit-transform: rotate(0);
+                transform:         rotate(0)
+            }
+            100% {
+                -webkit-transform: rotate(359deg);
+                transform:         rotate(359deg)
+            }
+        }
+
+        @keyframes icon-spin {
+            0% {
+                -webkit-transform: rotate(0);
+                transform:         rotate(0)
+            }
+            100% {
+                -webkit-transform: rotate(359deg);
+                transform:         rotate(359deg)
+            }
+        }
+    </style>
+</head>
+<body>
+<hotels-app>
+    <div class="loading-app mat-typography">
+        <h1>Hotels
+            <span><i class="material-icons">&#xE863;</i> Loading&hellip;</span>
+        </h1>
+    </div>
+</hotels-app>
+</body>
+</html>

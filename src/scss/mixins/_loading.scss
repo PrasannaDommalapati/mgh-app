@@ -1,0 +1,13 @@
+@import 'icon-spin';
+@mixin loading {
+
+  .loading {
+
+    opacity: 0.6;
+
+    md-icon {
+      vertical-align: middle;
+      @include icon-spin;
+    }
+  }
+}

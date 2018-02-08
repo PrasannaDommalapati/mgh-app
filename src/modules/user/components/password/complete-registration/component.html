@@ -1,0 +1,51 @@
+<form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+    <section md-dialog-title>
+        <button md-tooltip="Close." md-dialog-close class="icon close"></button>
+        <h1>Complete Registration</h1>
+    </section>
+
+    <section md-dialog-content>
+
+        <md-input-container>
+            <md-placeholder>First Name</md-placeholder>
+            <input mdInput
+                   id="givenName"
+                   formControlName="given_name">
+        </md-input-container>
+
+        <md-input-container>
+            <md-placeholder>Last Name</md-placeholder>
+            <input mdInput
+                   id="familyName"
+                   formControlName="family_name">
+        </md-input-container>
+
+        <ng-container formGroupName="newPassword">
+            <md-input-container>
+                <md-placeholder>New Password</md-placeholder>
+                <input mdInput
+                       id="password"
+                       formControlName="password"
+                       type="password">
+            </md-input-container>
+            <md-input-container>
+                <md-placeholder>Confirm password</md-placeholder>
+                <input mdInput
+                       id="confirmPassword"
+                       formControlName="confirmPassword"
+                       type="password">
+            </md-input-container>
+        </ng-container>
+
+        <p md-error *ngIf="error">{{ error }}</p>
+
+    </section>
+
+    <section md-dialog-actions align="end">
+        <button md-button [disabled]="!form.valid || loading" type="submit">
+            <i *ngIf="!loading" class="icon save"></i>
+            <i *ngIf="loading" class="icon refresh loading"></i>
+            Save
+        </button>
+    </section>
+</form>

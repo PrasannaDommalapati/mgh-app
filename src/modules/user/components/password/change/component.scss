@@ -1,0 +1,14 @@
+@import '../../../../../scss/mixins/modal';
+
+form {
+  @include modal;
+}
+
+.mat-card {
+
+  margin-bottom: 1em;
+
+  md-icon {
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,416 @@
+@import '../settings/_hotels';
+@import '../../scss/mixins/aw-gradient';
+@import '../../scss/mixins/fonts';
+
+@include roboto;
+
+$app-width: 75rem;
+$button-height: 40px;
+
+/* ---------- RESET ---------- */
+html, body {
+    margin: 0;
+    font-family: $mat-font-family;
+    font-size: 16px;
+    -webkit-overflow-scrolling: touch !important;
+    overflow: auto !important;
+    height: 100% !important;
+}
+
+address {
+    font-style: normal;
+}
+
+/* --------------------------- */
+
+md-sidenav-container .mat-sidenav-content, .mat-card {
+    color: $dark-gray;
+}
+
+md-sidenav-container .mat-sidenav-content {
+    /* ---------- CENTERED LAYOUT ---------- */
+
+    & {
+        min-height: 100vh;
+    }
+    & {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    & > * {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+
+        & > * {
+            width: 100%;
+            max-width: $app-width;
+        }
+    }
+    & > main {
+        flex-grow: 1;
+    }
+    /* ------------------------------------- */
+
+    /* ---------- HEADER ---------- */
+    & > header {
+
+        z-index: 999;
+
+        &, & > * {
+            color: $primary;
+            background: $light-gray;
+        }
+
+        @include bottom-shadow;
+
+        .title {
+
+            flex: 1 1 auto;
+
+            background-image: url('../assets/hotels.gradient.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            text-indent: -9999px;
+            height: $button-height;
+        }
+    }
+    /* ---------------------------- */
+
+    /* ---------- MAIN ---------- */
+    & > main {
+
+        & > * {
+
+            & > * {
+                display: block;
+                max-width: $app-width;
+                margin: 1rem auto;
+                padding: 0 1rem;
+            }
+
+            & > h1 {
+                @include aw-gradient;
+
+                @include bottom-shadow;
+
+                padding: 1.5rem 1rem;
+                margin: 0 auto 1rem auto;
+
+                color: white;
+                text-align: center;
+                .icon {
+                    display: block;
+                }
+            }
+        }
+
+        & > {
+            dashboard, driver-tabs {
+
+                & > * {
+                    padding: 0;
+
+                    md-tab-header {
+                        padding: 0 1rem;
+                    }
+
+                    md-tab-body > * section {
+                        padding: 0 1rem 1rem;
+                    }
+                }
+
+                & > .messages {
+                    padding: 0 1rem;
+                }
+            }
+        }
+
+        .hero {
+
+            margin: 0 auto 1rem auto;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & > *:not(button) {
+                width: 95%;
+                max-width: 25rem;
+            }
+
+            @include bottom-shadow;
+
+            position: relative;
+            @include aw-gradient;
+            color: #fff;
+            text-align: center;
+            padding: 2rem 1rem;
+
+            font-size: 150%;
+
+            h1::before {
+
+                display: block;
+                content: '';
+                background-image: url('../assets/logo.white.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin: 0.5rem auto;
+                width: 5rem;
+                height: 5rem;
+            }
+
+            h1, p {
+                line-height: 1.5;
+                margin: 0;
+            }
+
+            p {
+                font-size: 75%;
+                font-weight: 100;
+            }
+
+            section {
+                margin: 2rem 0;
+            }
+
+            .discover {
+                text-transform: uppercase;
+            }
+
+            .discover-more {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 50%);
+                color: $dark-gray;
+                background: $light-gray;
+            }
+
+            .register, .log-in {
+                width: 100%;
+                max-width: (100/6)+rem;
+                margin: 0.5em 0;
+                border-radius: 9999px;
+                text-transform: uppercase;
+            }
+
+            .register {
+                color: $primary;
+                background: #fff;
+            }
+
+            .log-in {
+                border: 1px solid;
+            }
+        }
+
+        .mat-tab-body-content > * > * > h1 {
+            text-align: center;
+        }
+    }
+    /* -------------------------- */
+
+    /* --------- FOOTER ---------- */
+    & > footer {
+
+        @include top-shadow;
+
+        &, md-toolbar {
+            color: #fff;
+            background: $dark-gray;
+        }
+
+        & > * > * {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        & > .items {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        & > section {
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            & > * {
+                margin: 1rem 0;
+                flex-grow: 1;
+            }
+
+            & > section:last-child {
+                flex-grow: 2;
+            }
+        }
+
+        .register, .log-in {
+            display: block;
+            width: 100%;
+            max-width: (100/6)+rem;
+            margin: 0.5em auto;
+            border-radius: 9999px;
+            text-transform: uppercase;
+        }
+
+        .register {
+            @include aw-gradient;
+        }
+
+        .log-in {
+            border: 1px solid;
+        }
+
+        h1, ul {
+            margin: 0;
+            padding: 0;
+            text-align: right;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            display: block;
+        }
+
+        .copyright {
+            flex: 1 1 auto;
+        }
+
+        md-toolbar {
+            padding: 0;
+            font-size: 1rem;
+        }
+
+        md-toolbar-row {
+            border-top: 1px solid $mid-gray;
+        }
+    }
+    /* --------------------------- */
+}
+
+/* ---------- TABS ---------- */
+
+.mat-tab-nav-bar, .mat-tab-header {
+    border: none;
+}
+
+.tabs.full-width .mat-tab-label {
+    flex: 1;
+}
+
+md-tab-header {
+    .mat-tab-labels .mat-tab-label {
+        background: #fff;
+        color: #00acc1;
+        border: 1px solid #00acc1;
+        border-radius: 3px;
+        text-transform: uppercase;
+
+        @media (max-width: 600px) {
+            min-width: 7.5rem;
+        }
+
+        margin: 0 1px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.mat-tab-label-active {
+            color: #fff;
+            background: #00acc1;
+        }
+
+        .badge {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            height: 1.5rem;
+            width: 1.5rem;
+            line-height: 2;
+            font-size: 0.9rem;
+            border: 1px solid #fafafa;
+            border-radius: 50%;
+            background-color: red;
+            color: #fff;
+        }
+    }
+
+    md-ink-bar {
+        display: none;
+    }
+}
+
+/* --------- SIDE NAV ---------- */
+.mat-sidenav {
+
+    padding: 0.5rem 0;
+
+    color: #fff;
+    background: $dark-gray;
+    text-transform: uppercase;
+
+    button {
+        text-transform: uppercase;
+        &:hover, &:active {
+            color: $secondary;
+        }
+        text-align: left;
+        width: 100%;
+    }
+}
+
+body .mat-dialog-container {
+
+    padding: 0;
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    max-width: 75vw;
+    min-width: 50vw;
+
+    @media (max-width: 600px) {
+        max-width: 90vw;
+        min-width: 90vw;
+    }
+
+    color: $dark-gray;
+}
+
+md-sidenav-container.fullscreen {
+    main > * {
+
+        .page-top {
+            margin-top: 0;
+            border-radius: 0;
+        }
+
+        md-card.login {
+            max-width: 50vw;
+
+            @media (max-width: 600px) {
+                max-width: 85vw;
+            }
+        }
+    }
+
+    footer md-toolbar-row {
+        border-top: none;
+    }
+}

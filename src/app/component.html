@@ -1,0 +1,52 @@
+<md-sidenav-container class="container">
+    <md-sidenav #sidenav mode="over" align="end" (click)="sidenav.close()">
+        <button md-button class="sidenav-link" routerLink="/">
+            <i *ngIf="!userLoggedIn()"class="material-icons">home</i>
+            <i *ngIf="userLoggedIn()" class="material-icons">dashboard</i>
+            {{ userLoggedIn() && 'Dashboard' || 'Home' }}
+        </button>
+        <button md-button class="sidenav-link" routerLink="/about" *ngIf="!userLoggedIn()">
+            <i class="material-icons">info_outline</i>
+            About
+        </button>
+        <user-menu class="sidenav-link" (click)="sidenav.close()"></user-menu>
+    </md-sidenav>
+
+    <header>
+        <md-toolbar>
+            <span class="title" routerLink="/">Hotels</span>
+            <i md-tooltip="Open menu." (click)="sidenav.open()" class="material-icons">menu</i>
+        </md-toolbar>
+    </header>
+
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+
+    <footer>
+        <section>
+            <section class="account" *ngIf="!userLoggedIn()">
+                <button class="register" md-button routerLink="/register">Register</button>
+                <button class="log-in" md-button routerLink="/login">Log In</button>
+            </section>
+            <section>
+                <h1 routerLink="/">Hotels</h1>
+                <ul>
+                    <li>Contact</li>
+                    <li>FAQs</li>
+                    <li>Hotels</li>
+                    <li>Privacy</li>
+                    <li>SiteMap</li>
+                </ul>
+            </section>
+        </section>
+        <md-toolbar>
+            <span class="copyright" routerLink="/"><i></i> &copy; Hotels</span>
+            <ng-container>
+                <button md-icon-button><i class="icon instagram"></i></button>
+                <button md-icon-button><i class="icon facebook"></i></button>
+                <button md-icon-button><i class="icon twitter"></i></button>
+            </ng-container>
+        </md-toolbar>
+    </footer>
+</md-sidenav-container>

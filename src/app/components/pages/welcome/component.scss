@@ -1,0 +1,14 @@
+@import '../../../../scss/settings/_hotels';
+
+.content {
+
+    padding-top:1em;
+
+    p, h1, h2, h3  {
+        text-align: center;
+    }
+
+    h1 {
+        color:$primary;
+    }
+}

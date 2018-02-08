@@ -1,0 +1,63 @@
+<section class="page-top">
+    <h1>Register</h1>
+    <p>For Hotels.com account.</p>
+</section>
+
+<md-card class="register">
+    <md-card-content>
+        <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+
+            <md-input-container>
+                <md-placeholder>First name</md-placeholder>
+                <input mdInput
+                       id="given_name"
+                       formControlName="given_name">
+            </md-input-container>
+
+            <md-input-container>
+                <md-placeholder>Last name</md-placeholder>
+                <input mdInput
+                       id="family_name"
+                       formControlName="family_name">
+            </md-input-container>
+
+            <md-input-container>
+                <md-placeholder>Email address</md-placeholder>
+                <input mdInput
+                       id="email"
+                       formControlName="email"
+                       type="email">
+            </md-input-container>
+
+            <section formGroupName="newPassword">
+                <md-input-container>
+                    <md-placeholder>Password</md-placeholder>
+                    <input mdInput
+                           id="password"
+                           formControlName="password"
+                           type="password">
+                </md-input-container>
+
+                <md-input-container>
+                    <md-placeholder>Confirm password</md-placeholder>
+                    <input mdInput
+                           id="confirmPassword"
+                           formControlName="confirmPassword"
+                           type="password">
+                </md-input-container>
+            </section>
+            <md-checkbox mdTooltip="Hotels Terms and Conditions." formControlName="acceptTerms">
+            </md-checkbox>
+
+            <p md-error *ngIf="error">{{ error }}</p>
+
+            <section class="actions">
+                <button md-button [disabled]="!form.valid || loading" type="submit">
+                    <i *ngIf="!loading" class="icon user"></i>
+                    <i *ngIf="loading" class="icon refresh loading"></i>
+                    Register
+                </button>
+            </section>
+        </form>
+    </md-card-content>
+</md-card>

@@ -1,0 +1,31 @@
+<section class="page-top">
+    <h1>Forgot Password</h1>
+    <p>For an AnyWaste account</p>
+</section>
+
+<md-card class="forgotPassword">
+    <md-card-content>
+        <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+
+            <p> In order to receive your verification code by your email, please enter the email address you provided during registration process. Thanks.</p>
+
+            <md-input-container>
+                <md-placeholder>Email address</md-placeholder>
+                <input mdInput id="Email" formControlName="email" type="email">
+                <span md-error *ngIf="error">{{ error }}</span>
+            </md-input-container>
+
+            <section class="actions">
+                <button md-button routerLink="/login">
+                    <i class="icon log-in"></i>
+                    Back to Login
+                </button>
+                <button md-button [disabled]="!form.valid || loading" type="submit">
+                    <i *ngIf="!loading" class="icon security"></i>
+                    <i *ngIf="loading" class="icon refresh loading"></i>
+                    Change Password
+                </button>
+            </section>
+        </form>
+    </md-card-content>
+</md-card>
