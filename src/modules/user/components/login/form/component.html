@@ -1,24 +1,20 @@
 <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
-    <mat-input-container>
-        <mat-placeholder><i class="icon user-login"></i> Email address</mat-placeholder>
-        <input matInput
-               id="email"
-               formControlName="email"
-               type="email">
-    </mat-input-container>
+    <mat-form-field>
+        <mat-placeholder>
+            <mat-icon class="material-icons">perm_identity</mat-icon>
+            Email address
+        </mat-placeholder>
+        <input matInput id="loginEmail" formControlName="email" type="email">
+    </mat-form-field>
 
-    <mat-input-container mat-is-error="!!error">
-        <mat-placeholder><i class="icon security"></i> Password</mat-placeholder>
-        <input matInput
-               id="password"
-               formControlName="password"
-               type="password">
-    </mat-input-container>
-
-    <mat-checkbox id="loginAcceptTsAndCs"
-                 matTooltip="Hotels Terms and Conditions."
-                 formControlName="acceptTerms">
-    </mat-checkbox>
+    <!--<label for="loginPassword">Password</label>-->
+    <mat-form-field mat-is-error="!!error">
+        <mat-placeholder>
+            <mat-icon class="material-icons">lock_outline</mat-icon>
+            Password
+        </mat-placeholder>
+        <input matInput id="loginPassword" formControlName="password" type="password">
+    </mat-form-field>
 
     <p mat-error *ngIf="error">{{ error }}</p>
 

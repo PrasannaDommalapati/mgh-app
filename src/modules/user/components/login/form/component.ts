@@ -31,18 +31,9 @@ export class LoginForm {
             {
                 email:       [null, [Validators.required]],
                 password:    [null, [Validators.required]],
-                acceptTerms: [null, [this.acceptTermsAndConditions]],
             });
     }
 
-    private acceptTermsAndConditions(acceptTerms: FormControl) {
-
-        return !!acceptTerms.value ? null : {
-            acceptTermsInvalid: {
-                error: 'You must accept Hotels.com terms and conditions.',
-            },
-        };
-    }
 
     onSubmit() {
 
