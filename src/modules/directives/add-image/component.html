@@ -1,0 +1,14 @@
+<label>{{label}}</label>
+<input #imageFileInput *ngIf="!FormControl.value"
+       type="file"
+       accept="image/*"
+       capture="camera"
+       (change)="onImageChange($event)" required>
+<mat-error *ngIf="!!invalidMimeType">Invalid file type (must be an image file): {{ invalidMimeType }}</mat-error>
+<mat-error *ngIf="!!invalidFileSize">Invalid file size (max {{maxFileSizeMB}}MB): {{ invalidFileSize }}MB</mat-error>
+<section class="photo" [ngClass]="{showPreview: !!FormControl.value}">
+    <img #imageFileOutput (load)="onPreviewLoad()">
+    <button mat-mini-fab mat-tooltip="Remove image." (click)="removeImage()" type="button">
+        <i class="icon delete"></i>
+    </button>
+</section>

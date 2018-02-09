@@ -1,0 +1,50 @@
+<form novalidate [formGroup]="form" (ngSubmit)="onSubmit()" class="edit-address">
+    <section mat-dialog-title>
+        <button mat-tooltip="Close." mat-dialog-close class="icon close"></button>
+        <h1>Edit Address</h1>
+    </section>
+
+    <section mat-dialog-content>
+        <mat-input-container>
+            <mat-placeholder>Company Name</mat-placeholder>
+            <input matInput formControlName="name">
+        </mat-input-container>
+        <mat-input-container>
+            <mat-placeholder>Address</mat-placeholder>
+            <textarea matInput rows="5" formControlName="address"></textarea>
+        </mat-input-container>
+        <mat-input-container>
+            <mat-placeholder>Postcode</mat-placeholder>
+            <input matInput formControlName="postcode" class="uppercase">
+        </mat-input-container>
+        <ng-container *ngIf="contactDetails">
+            <mat-input-container>
+                <mat-placeholder>Mobile</mat-placeholder>
+                <input matInput formControlName="mobile">
+            </mat-input-container>
+            <mat-input-container>
+                <mat-placeholder>Telephone</mat-placeholder>
+                <input matInput formControlName="phone">
+            </mat-input-container>
+            <mat-input-container>
+                <mat-placeholder>Email</mat-placeholder>
+                <input matInput formControlName="email">
+            </mat-input-container>
+            <mat-input-container>
+                <mat-placeholder>Fax</mat-placeholder>
+                <input matInput formControlName="fax">
+            </mat-input-container>
+        </ng-container>
+    </section>
+
+    <section mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>
+            <i class="icon cancel"></i>
+            Cancel
+        </button>
+        <button mat-button [disabled]="!form.valid" type="submit">
+            <i class="icon done"></i>
+            Done
+        </button>
+    </section>
+</form>

@@ -1,0 +1,31 @@
+<section class="page-top">
+    <h1>Forgot Password</h1>
+    <p>For an AnyWaste account</p>
+</section>
+
+<mat-card class="forgotPassword">
+    <mat-card-content>
+        <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+
+            <p> In order to receive your verification code by your email, please enter the email address you provided during registration process. Thanks.</p>
+
+            <mat-input-container>
+                <mat-placeholder>Email address</mat-placeholder>
+                <input matInput id="Email" formControlName="email" type="email">
+                <span mat-error *ngIf="error">{{ error }}</span>
+            </mat-input-container>
+
+            <section class="actions">
+                <button mat-button routerLink="/login">
+                    <i class="icon log-in"></i>
+                    Back to Login
+                </button>
+                <button mat-button [disabled]="!form.valid || loading" type="submit">
+                    <i *ngIf="!loading" class="icon security"></i>
+                    <i *ngIf="loading" class="icon refresh loading"></i>
+                    Change Password
+                </button>
+            </section>
+        </form>
+    </mat-card-content>
+</mat-card>

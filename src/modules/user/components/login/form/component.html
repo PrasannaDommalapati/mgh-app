@@ -1,0 +1,26 @@
+<form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <md-placeholder><i class="icon user-login"></i> Email address</md-placeholder>
+        <input matInput id="loginEmail" formControlName="email" type="email">
+    </mat-form-field>
+
+    <!--<label for="loginPassword">Password</label>-->
+    <mat-form-field mat-is-error="!!error">
+        <md-placeholder><i class="icon security"></i> Password</md-placeholder>
+        <input matInput id="loginPassword" formControlName="password" type="password">
+    </mat-form-field>
+
+    <p mat-error *ngIf="error">{{ error }}</p>
+
+    <section class="actions">
+        <button mat-button [disabled]="!form.valid || loading" type="submit">
+            <i class="icon user" *ngIf="!loading"></i>
+            <i class="icon refresh loading" *ngIf="loading"></i>
+            Login
+        </button>
+        <button mat-button routerLink="/forgot-password" *ngIf="forgotPass">
+            <i class="icon security"></i>
+            Forgot Password
+        </button>
+    </section>
+</form>

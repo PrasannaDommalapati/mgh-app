@@ -1,0 +1,7 @@
+@import '../settings/_hotels';
+
+@mixin aw-gradient {
+
+  background: $primary;
+  background: linear-gradient(to bottom left, $primary, $secondary)
+}

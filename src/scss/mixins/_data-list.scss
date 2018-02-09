@@ -1,0 +1,21 @@
+
+@mixin data-list-horizontal {
+
+    dl {
+        padding: 1rem;
+    }
+    dt {
+        float: left;
+        clear: left;
+        width: 40%;
+        text-align: right;
+        font-weight: bold;
+    }
+    dt::after {
+        content: ":";
+    }
+    dd {
+        margin: 0 0 0 40%;
+        padding: 0 0 0.5rem 1rem;
+    }
+}

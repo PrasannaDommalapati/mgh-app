@@ -1,0 +1,51 @@
+<form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+    <section mat-dialog-title>
+        <button mat-tooltip="Close." mat-dialog-close class="icon close"></button>
+        <h1>Complete Registration</h1>
+    </section>
+
+    <section mat-dialog-content>
+
+        <mat-input-container>
+            <mat-placeholder>First Name</mat-placeholder>
+            <input matInput
+                   id="givenName"
+                   formControlName="given_name">
+        </mat-input-container>
+
+        <mat-input-container>
+            <mat-placeholder>Last Name</mat-placeholder>
+            <input matInput
+                   id="familyName"
+                   formControlName="family_name">
+        </mat-input-container>
+
+        <ng-container formGroupName="newPassword">
+            <mat-input-container>
+                <mat-placeholder>New Password</mat-placeholder>
+                <input matInput
+                       id="password"
+                       formControlName="password"
+                       type="password">
+            </mat-input-container>
+            <mat-input-container>
+                <mat-placeholder>Confirm password</mat-placeholder>
+                <input matInput
+                       id="confirmPassword"
+                       formControlName="confirmPassword"
+                       type="password">
+            </mat-input-container>
+        </ng-container>
+
+        <p mat-error *ngIf="error">{{ error }}</p>
+
+    </section>
+
+    <section mat-dialog-actions align="end">
+        <button mat-button [disabled]="!form.valid || loading" type="submit">
+            <i *ngIf="!loading" class="icon save"></i>
+            <i *ngIf="loading" class="icon refresh loading"></i>
+            Save
+        </button>
+    </section>
+</form>

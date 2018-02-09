@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+$primary: map-get($mat-blue-grey, 300); //#5cc7d7;
+$secondary: map-get($mat-light-blue, 300); //#a0cf76;
+$error: map_get($mat-red, 500);
+$warn: map_get($mat-amber, 500);
+$light-gray: whitesmoke;
+$mid-gray: #999999;
+$dark-gray: #666666;
+
+@mixin bottom-shadow {
+    box-shadow: 0 4px 4px -2px $mid-gray;
+}
+
+@mixin top-shadow {
+    box-shadow: 0 -4px 4px -2px $mid-gray;
+}

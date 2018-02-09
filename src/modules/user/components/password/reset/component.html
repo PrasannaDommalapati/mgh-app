@@ -1,0 +1,44 @@
+<form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+    <section mat-dialog-title>
+        <button mat-tooltip="Close." mat-dialog-close class="icon close"></button>
+        <h1>Reset Password</h1>
+    </section>
+
+    <section mat-dialog-content>
+
+        <p>Please check your email to find your verification code</p>
+
+        <mat-input-container>
+            <mat-placeholder>Verification code</mat-placeholder>
+            <input matInput id="code" formControlName="code">
+        </mat-input-container>
+
+        <ng-container formGroupName="newPassword">
+            <mat-input-container>
+                <mat-placeholder>New Password</mat-placeholder>
+                <input matInput
+                       id="password"
+                       formControlName="password"
+                       type="password">
+            </mat-input-container>
+            <mat-input-container>
+                <mat-placeholder>Confirm password</mat-placeholder>
+                <input matInput
+                       id="confirmPassword"
+                       formControlName="confirmPassword"
+                       type="password">
+            </mat-input-container>
+        </ng-container>
+
+        <p mat-error *ngIf="error">{{ error }}</p>
+
+    </section>
+
+    <section mat-dialog-actions align="end">
+        <button mat-button [disabled]="!form.valid || loading" type="submit">
+            <i *ngIf="!loading" class="icon save"></i>
+            <i *ngIf="loading" class="icon refresh loading"></i>
+            Reset
+        </button>
+    </section>
+</form>

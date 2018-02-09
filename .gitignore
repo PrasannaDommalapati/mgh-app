@@ -1,0 +1,12 @@
+node_modules
+/dist/
+npm-debug.log
+/build/*
+!.gitkeep
+.DS_Store
+.idea/
+src/**/*.js
+src/**/*.js.map
+typings
+!src/typings
+*.orig

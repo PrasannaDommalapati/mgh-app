@@ -1,0 +1,34 @@
+.photo {
+    position:    relative;
+    margin:      0 auto;
+    width:       0;
+    height:      0;
+    text-indent: -9999999px;
+
+    img {
+        width:      100%;
+        height:     100%;
+        object-fit: cover;
+    }
+
+    button {
+        display: none;
+    }
+
+    &.showPreview {
+        text-indent: 0;
+        width:       100px;
+        height:      100px;
+
+        button:not([mat-icon-button]) {
+            display:    block;
+            background: #ffffff;
+            text-align: center;
+            width:      40px;
+            position:   absolute;
+            top:        -15px;
+            right:      -15px;
+            margin:     0;
+        }
+    }
+}

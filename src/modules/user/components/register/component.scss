@@ -1,0 +1,15 @@
+@import '../../../../scss/mixins/page-top';
+@import '../../../../scss/mixins/user-card';
+
+.page-top {
+
+    @include page-top;
+}
+
+mat-card.register {
+    @include user-card;
+
+    form {
+        @include user-form;
+    }
+}

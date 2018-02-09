@@ -1,0 +1,33 @@
+<form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+    <section mat-dialog-title>
+        <button mat-tooltip="Close." mat-dialog-close class="icon close"></button>
+        <h1>Change Password</h1>
+    </section>
+
+    <section mat-dialog-content>
+        <mat-input-container>
+            <mat-placeholder>Old Password</mat-placeholder>
+            <input matInput id="oldPassword" formControlName="oldPassword" type="password">
+        </mat-input-container>
+
+        <ng-container formGroupName="newPassword">
+            <mat-input-container>
+                <mat-placeholder>New Password</mat-placeholder>
+                <input matInput id="newPassword" formControlName="password" type="password">
+                <span mat-error *ngIf="error">{{ error }}</span>
+            </mat-input-container>
+
+            <mat-input-container>
+                <mat-placeholder>Confirm New Password</mat-placeholder>
+                <input matInput id="confirmPassword" formControlName="confirmPassword" type="password">
+            </mat-input-container>
+        </ng-container>
+    </section>
+    <section mat-dialog-actions align="end">
+        <button mat-button [disabled]="!form.valid || loading" type="submit">
+            <i *ngIf="!loading" class="icon security"></i>
+            <i *ngIf="loading" class="icon refresh loading"></i>
+            Change Password
+        </button>
+    </section>
+</form>

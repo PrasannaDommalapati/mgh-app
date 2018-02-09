@@ -1,0 +1,17 @@
+@import '../../../../scss/settings/_hotels';
+@import '../../../../scss/mixins/modal';
+@import '../../../../scss/mixins/icon-spin';
+
+form {
+    @include modal;
+}
+
+.loading mat-icon {
+    @include icon-spin;
+}
+.error {
+
+    color: $error;
+    font-size:0.8em;
+    font-style:italic;
+}

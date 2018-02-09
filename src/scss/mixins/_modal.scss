@@ -1,0 +1,75 @@
+@import '../settings/_hotels';
+@import 'icon-spin';
+
+@mixin modal {
+
+  display: flex;
+  flex-direction: column;
+  max-height: 95vh;
+
+  [mat-dialog-title] {
+    flex: none;
+    padding: 24px;
+    margin: 0;
+    color: #fff;
+    background: $primary;
+
+    h1 {
+      font-size: 1.4rem;
+      margin: 0;
+    }
+
+    button {
+      font-size: 1.4rem;
+      float: right;
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      outline: none;
+      border: none;
+      background-color: inherit;
+    }
+  }
+
+  [mat-dialog-content] {
+    margin: 0;
+    padding: 12px 24px;
+    flex: auto;
+
+    button:not([mat-icon-button]) {
+      width: 100%;
+      margin: 12px 0;
+      text-align: left;
+
+      &.mat-datepicker-toggle {
+        margin: 0;
+        width: 1em;
+        height: 1em;
+      }
+    }
+  }
+
+  [mat-dialog-actions] {
+    flex: none;
+    margin: 0;
+    padding: 0 24px 12px;
+  }
+
+  mat-input-container, mat-select, mat-checkbox {
+    display: block;
+    width: 100%;
+    margin: 1em 0;
+  }
+
+  mat-select, mat-checkbox {
+    margin: 1em 0;
+    padding-bottom: 6px;
+  }
+
+  .error {
+
+    color: $error;
+    font-size: 0.8em;
+    font-style: italic;
+  }
+}

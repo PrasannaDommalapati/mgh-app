@@ -1,0 +1,21 @@
+@import '../../../../../scss/mixins/user-card';
+
+form {
+  @include user-form;
+}
+
+mat-placeholder .icon {
+  font-size: 100%;
+  text-align: left;
+}
+
+mat-checkbox {
+  display: block;
+  width: 100%;
+  margin: 1em 0;
+}
+
+mat-checkbox {
+  margin: 1em 0;
+  padding-bottom: 6px;
+}

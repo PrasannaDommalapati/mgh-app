@@ -1,0 +1,46 @@
+@import '../../scss/mixins/aw-gradient';
+
+@mixin page-top($icon:'../assets/logo.white.png') {
+
+    display:        flex;
+    flex-direction: column;
+    align-items:    center;
+
+    & > *:not(button) {
+        width:     95%;
+        max-width: 25rem;
+    }
+
+    @include bottom-shadow;
+
+    position:       relative;
+    @include aw-gradient;
+    color:          #FFFFFF;
+    text-align:     center;
+    padding:        2rem 0;
+
+    font-size:      150%;
+
+    h1::before {
+
+        display:           block;
+        content:           '';
+        background-image:  url($icon);
+        background-size:   contain;
+        background-repeat: no-repeat;
+        margin:            0.5rem auto;
+        width:             5rem;
+        height:            5rem;
+    }
+
+    h1, p {
+        line-height: 1.5;
+        margin:      0;
+    }
+
+    p {
+        font-size:   75%;
+        font-weight: 100;
+    }
+
+}

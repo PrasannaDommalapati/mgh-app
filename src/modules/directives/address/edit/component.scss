@@ -1,0 +1,10 @@
+@import '../../../../scss/mixins/modal';
+
+form {
+    @include modal;
+
+    .uppercase {
+
+        text-transform: uppercase;
+    }
+}

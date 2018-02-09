@@ -1,0 +1,14 @@
+@import '../../../../scss/mixins/page-top';
+@import '../../../../scss/mixins/icon-spin';
+@import '../../../../scss/mixins/user-card';
+
+.page-top {
+
+  @include page-top();
+}
+
+mat-card.login {
+  @include user-card;
+}
+
+

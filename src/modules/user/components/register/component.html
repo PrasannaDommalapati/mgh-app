@@ -1,0 +1,63 @@
+<section class="page-top">
+    <h1>Register</h1>
+    <p>For Hotels.com account.</p>
+</section>
+
+<mat-card class="register">
+    <mat-card-content>
+        <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+
+            <mat-input-container>
+                <mat-placeholder>First name</mat-placeholder>
+                <input matInput
+                       id="given_name"
+                       formControlName="given_name">
+            </mat-input-container>
+
+            <mat-input-container>
+                <mat-placeholder>Last name</mat-placeholder>
+                <input matInput
+                       id="family_name"
+                       formControlName="family_name">
+            </mat-input-container>
+
+            <mat-input-container>
+                <mat-placeholder>Email address</mat-placeholder>
+                <input matInput
+                       id="email"
+                       formControlName="email"
+                       type="email">
+            </mat-input-container>
+
+            <section formGroupName="newPassword">
+                <mat-input-container>
+                    <mat-placeholder>Password</mat-placeholder>
+                    <input matInput
+                           id="password"
+                           formControlName="password"
+                           type="password">
+                </mat-input-container>
+
+                <mat-input-container>
+                    <mat-placeholder>Confirm password</mat-placeholder>
+                    <input matInput
+                           id="confirmPassword"
+                           formControlName="confirmPassword"
+                           type="password">
+                </mat-input-container>
+            </section>
+            <mat-checkbox matTooltip="Hotels Terms and Conditions." formControlName="acceptTerms">
+            </mat-checkbox>
+
+            <p mat-error *ngIf="error">{{ error }}</p>
+
+            <section class="actions">
+                <button mat-button [disabled]="!form.valid || loading" type="submit">
+                    <i *ngIf="!loading" class="icon user"></i>
+                    <i *ngIf="loading" class="icon refresh loading"></i>
+                    Register
+                </button>
+            </section>
+        </form>
+    </mat-card-content>
+</mat-card>

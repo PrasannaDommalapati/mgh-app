@@ -1,0 +1,26 @@
+@import 'icon-spin';
+
+@mixin user-card {
+
+  //max-width: 25rem;
+  .mat-card-content {
+    padding: 1rem 0;
+  }
+}
+
+@mixin user-form {
+  mat-form-field {
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .loading mat-icon {
+    @include icon-spin;
+  }
+}
