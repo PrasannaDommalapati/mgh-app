@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {UserService} from '../../services/user-api';
-import {MdDialog, MdDialogConfig} from '@angular/material';
+import {MatDialog, MatDialogConfig} from '@angular/material';
 import {ChangePasswordModal} from '../password/change/component';
 import {ChangePassword} from '../../../../interfaces/change-password';
 
@@ -14,7 +14,7 @@ export class UserMenu {
 
     @Output() close = new EventEmitter();
 
-    constructor(public dialog: MdDialog,
+    constructor(public dialog: MatDialog,
                 private UserService: UserService) {
     }
 
@@ -42,7 +42,7 @@ export class UserMenu {
 
     public changePassword() {
 
-        let config = new MdDialogConfig;
+        let config = new MatDialogConfig;
 
         config.disableClose = true;
         config.data         = true;

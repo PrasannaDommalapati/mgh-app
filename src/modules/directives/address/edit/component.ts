@@ -1,6 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import {FormGroup} from '@angular/forms';
-import {MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
+import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {AddressFormFactory} from '../../../../factories/address';
 
 @Component(
@@ -14,7 +14,7 @@ export class EditAddress {
     public contactDetails: boolean;
     public form: FormGroup;
 
-    constructor(protected  dialogRef: MdDialogRef<EditAddress>, @Inject(MD_DIALOG_DATA) public data: any) {
+    constructor(protected  dialogRef: MatDialogRef<EditAddress>, @Inject(MAT_DIALOG_DATA) public data: any) {
         this.form = AddressFormFactory.form();
     }
 

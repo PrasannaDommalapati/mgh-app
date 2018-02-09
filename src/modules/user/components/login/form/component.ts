@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import {MdDialog, MdDialogConfig} from '@angular/material';
+import {MatDialog, MatDialogConfig} from '@angular/material';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {VerifyModal} from '../../verify/component';
@@ -21,7 +21,7 @@ export class LoginForm {
     public forgotPass:boolean = false;
 
     constructor(public UserService: UserService,
-                protected dialog: MdDialog,
+                protected dialog: MatDialog,
                 protected router: Router) {
     }
 
@@ -63,7 +63,7 @@ export class LoginForm {
 
     public confirmRegistration(cognitoUser: any) {
 
-        let config = new MdDialogConfig();
+        let config = new MatDialogConfig();
 
         config.disableClose = true;
 

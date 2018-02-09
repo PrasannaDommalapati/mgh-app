@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {FormGroup} from '@angular/forms';
 
-import {MdDialog, MdDialogConfig} from '@angular/material';
+import {MatDialog, MatDialogConfig} from '@angular/material';
 import {UserService} from '../../../services/user-api';
 import {PasswordForgotFormFactory} from '../../../../../factories/password/forgot';
 import {ResetPasswordModal} from '../reset/component';
@@ -20,7 +20,7 @@ export class ForgotPasswordModal {
     public error: string;
 
     constructor(public UserService: UserService,
-                protected dialog: MdDialog,
+                protected dialog: MatDialog,
                 protected router: Router) {
     }
 
@@ -48,7 +48,7 @@ export class ForgotPasswordModal {
 
     setNewPassword() {
 
-        let config = new MdDialogConfig;
+        let config = new MatDialogConfig;
 
         config.disableClose = true;
 

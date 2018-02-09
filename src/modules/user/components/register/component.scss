@@ -6,7 +6,7 @@
     @include page-top;
 }
 
-md-card.register {
+mat-card.register {
     @include user-card;
 
     form {

@@ -9,7 +9,7 @@
 }
 
 @mixin user-form {
-  md-input-container {
+  mat-input-container {
     width: 100%;
     margin: 1rem 0;
   }
@@ -20,7 +20,7 @@
     justify-content: flex-end;
   }
 
-  .loading md-icon {
+  .loading mat-icon {
     @include icon-spin;
   }
 }

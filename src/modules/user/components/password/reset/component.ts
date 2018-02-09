@@ -1,5 +1,5 @@
 import {Component, Inject}   from '@angular/core';
-import {MdDialogRef, MD_DIALOG_DATA} from "@angular/material";
+import {MatDialogRef, MAT_DIALOG_DATA} from "@angular/material";
 import {FormGroup} from "@angular/forms";
 import {UserService} from "../../../services/user-api";
 import {PasswordResetFormFactory} from '../../../../../factories/password/reset';
@@ -16,8 +16,8 @@ export class ResetPasswordModal {
     public error: string;
 
     constructor(public UserService: UserService,
-                protected dialogRef: MdDialogRef<ResetPasswordModal>,
-                @Inject(MD_DIALOG_DATA) public data: any) {
+                protected dialogRef: MatDialogRef<ResetPasswordModal>,
+                @Inject(MAT_DIALOG_DATA) public data: any) {
     }
 
     ngOnInit() {

@@ -64,13 +64,13 @@ $background: map-get($anywaste-theme, background);
 
     .list {
 
-        md-card-content {
+        mat-card-content {
             //font-size:   $mat-body-font-size-base;
             //line-height: $mat-icon-button-size;
             overflow-x:  auto;
         }
 
-        md-card-actions {
+        mat-card-actions {
             text-align: center;
             padding:    12px;
         }

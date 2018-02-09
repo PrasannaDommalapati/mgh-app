@@ -3,61 +3,61 @@
     <p>For Hotels.com account.</p>
 </section>
 
-<md-card class="register">
-    <md-card-content>
+<mat-card class="register">
+    <mat-card-content>
         <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
 
-            <md-input-container>
-                <md-placeholder>First name</md-placeholder>
-                <input mdInput
+            <mat-input-container>
+                <mat-placeholder>First name</mat-placeholder>
+                <input matInput
                        id="given_name"
                        formControlName="given_name">
-            </md-input-container>
+            </mat-input-container>
 
-            <md-input-container>
-                <md-placeholder>Last name</md-placeholder>
-                <input mdInput
+            <mat-input-container>
+                <mat-placeholder>Last name</mat-placeholder>
+                <input matInput
                        id="family_name"
                        formControlName="family_name">
-            </md-input-container>
+            </mat-input-container>
 
-            <md-input-container>
-                <md-placeholder>Email address</md-placeholder>
-                <input mdInput
+            <mat-input-container>
+                <mat-placeholder>Email address</mat-placeholder>
+                <input matInput
                        id="email"
                        formControlName="email"
                        type="email">
-            </md-input-container>
+            </mat-input-container>
 
             <section formGroupName="newPassword">
-                <md-input-container>
-                    <md-placeholder>Password</md-placeholder>
-                    <input mdInput
+                <mat-input-container>
+                    <mat-placeholder>Password</mat-placeholder>
+                    <input matInput
                            id="password"
                            formControlName="password"
                            type="password">
-                </md-input-container>
+                </mat-input-container>
 
-                <md-input-container>
-                    <md-placeholder>Confirm password</md-placeholder>
-                    <input mdInput
+                <mat-input-container>
+                    <mat-placeholder>Confirm password</mat-placeholder>
+                    <input matInput
                            id="confirmPassword"
                            formControlName="confirmPassword"
                            type="password">
-                </md-input-container>
+                </mat-input-container>
             </section>
-            <md-checkbox mdTooltip="Hotels Terms and Conditions." formControlName="acceptTerms">
-            </md-checkbox>
+            <mat-checkbox matTooltip="Hotels Terms and Conditions." formControlName="acceptTerms">
+            </mat-checkbox>
 
-            <p md-error *ngIf="error">{{ error }}</p>
+            <p mat-error *ngIf="error">{{ error }}</p>
 
             <section class="actions">
-                <button md-button [disabled]="!form.valid || loading" type="submit">
+                <button mat-button [disabled]="!form.valid || loading" type="submit">
                     <i *ngIf="!loading" class="icon user"></i>
                     <i *ngIf="loading" class="icon refresh loading"></i>
                     Register
                 </button>
             </section>
         </form>
-    </md-card-content>
-</md-card>
+    </mat-card-content>
+</mat-card>

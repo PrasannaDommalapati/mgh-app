@@ -4,7 +4,7 @@ import {
     ActivatedRouteSnapshot,
     RouterStateSnapshot,
 } from '@angular/router';
-import {MdDialog} from '@angular/material';
+import {MatDialog} from '@angular/material';
 import {Observable} from 'rxjs';
 import {UserService} from './user-api';
 import {Subscriber} from 'rxjs/Subscriber';
@@ -15,7 +15,7 @@ export class AuthGuard implements CanActivate {
 
     constructor(private Router: Router,
                 private UserService: UserService,
-                public dialog: MdDialog) {
+                public dialog: MatDialog) {
     }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {

@@ -1,12 +1,12 @@
-import {MdSnackBar, MdSnackBarConfig} from '@angular/material';
+import {MatSnackBar, MatSnackBarConfig} from '@angular/material';
 import {Injectable} from '@angular/core';
 
 @Injectable()
-export class AwSnackBar extends MdSnackBar {
+export class AwSnackBar extends MatSnackBar {
 
     public handleSuccess(message: string) {
 
-        let config: MdSnackBarConfig = new MdSnackBarConfig();
+        let config: MatSnackBarConfig = new MatSnackBarConfig();
 
         config.extraClasses = ['success'];
 
@@ -15,14 +15,14 @@ export class AwSnackBar extends MdSnackBar {
 
     public handleError(error: Error) {
 
-        let config: MdSnackBarConfig = new MdSnackBarConfig();
+        let config: MatSnackBarConfig = new MatSnackBarConfig();
 
         config.extraClasses = ['error'];
 
         return this.snackBar(config, error.toString());
     }
 
-    private snackBar(config:MdSnackBarConfig, message:string) {
+    private snackBar(config:MatSnackBarConfig, message:string) {
 
         config.duration     = 2000 + (message.length * 50);
 

@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {FormGroup} from '@angular/forms';
 
-import {MdDialog, MdDialogConfig} from '@angular/material';
+import {MatDialog, MatDialogConfig} from '@angular/material';
 import {RegistrationFormFactory} from '../../../../factories/registration';
 import {Register} from '../../../../interfaces/Register';
 import {UserService} from '../../services/user-api';
@@ -21,7 +21,7 @@ export class Registration {
     public loading: boolean;
     public error: string;
 
-    constructor(public UserService: UserService, protected dialog: MdDialog, protected router: Router) {
+    constructor(public UserService: UserService, protected dialog: MatDialog, protected router: Router) {
     }
 
     ngOnInit() {
@@ -46,7 +46,7 @@ export class Registration {
 
     confirmRegistration(CognitoUser: CognitoUser) {
 
-        let config = new MdDialogConfig();
+        let config = new MatDialogConfig();
 
         config.disableClose = true;
         config.data = CognitoUser;

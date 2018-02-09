@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {MdDialogRef, MD_DIALOG_DATA} from '@angular/material';
+import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserService} from '../../services/user-api';
 import {CognitoUser} from 'amazon-cognito-identity-js';
@@ -17,8 +17,8 @@ export class VerifyModal {
     public error: string;
 
     constructor(public UserService: UserService,
-                protected dialogRef: MdDialogRef<VerifyModal>,
-                @Inject(MD_DIALOG_DATA) private CognitoUser: CognitoUser) {
+                protected dialogRef: MatDialogRef<VerifyModal>,
+                @Inject(MAT_DIALOG_DATA) private CognitoUser: CognitoUser) {
     }
 
     ngOnInit() {

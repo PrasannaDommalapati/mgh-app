@@ -1,5 +1,5 @@
 import {Component}   from '@angular/core';
-import {MdDialogRef} from "@angular/material";
+import {MatDialogRef} from "@angular/material";
 
 @Component({
     selector:    'user-login-modal',
@@ -8,7 +8,7 @@ import {MdDialogRef} from "@angular/material";
 })
 export class LoginModal {
 
-    constructor(protected dialogRef: MdDialogRef<LoginModal>) {}
+    constructor(protected dialogRef: MatDialogRef<LoginModal>) {}
 
     public handleLogin(loggedIn:boolean) {
 

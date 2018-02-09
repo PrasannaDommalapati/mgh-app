@@ -1,48 +1,48 @@
 <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()" class="edit-address">
-    <section md-dialog-title>
-        <button md-tooltip="Close." md-dialog-close class="icon close"></button>
+    <section mat-dialog-title>
+        <button mat-tooltip="Close." mat-dialog-close class="icon close"></button>
         <h1>Edit Address</h1>
     </section>
 
-    <section md-dialog-content>
-        <md-input-container>
-            <md-placeholder>Company Name</md-placeholder>
-            <input mdInput formControlName="name">
-        </md-input-container>
-        <md-input-container>
-            <md-placeholder>Address</md-placeholder>
-            <textarea mdInput rows="5" formControlName="address"></textarea>
-        </md-input-container>
-        <md-input-container>
-            <md-placeholder>Postcode</md-placeholder>
-            <input mdInput formControlName="postcode" class="uppercase">
-        </md-input-container>
+    <section mat-dialog-content>
+        <mat-input-container>
+            <mat-placeholder>Company Name</mat-placeholder>
+            <input matInput formControlName="name">
+        </mat-input-container>
+        <mat-input-container>
+            <mat-placeholder>Address</mat-placeholder>
+            <textarea matInput rows="5" formControlName="address"></textarea>
+        </mat-input-container>
+        <mat-input-container>
+            <mat-placeholder>Postcode</mat-placeholder>
+            <input matInput formControlName="postcode" class="uppercase">
+        </mat-input-container>
         <ng-container *ngIf="contactDetails">
-            <md-input-container>
-                <md-placeholder>Mobile</md-placeholder>
-                <input mdInput formControlName="mobile">
-            </md-input-container>
-            <md-input-container>
-                <md-placeholder>Telephone</md-placeholder>
-                <input mdInput formControlName="phone">
-            </md-input-container>
-            <md-input-container>
-                <md-placeholder>Email</md-placeholder>
-                <input mdInput formControlName="email">
-            </md-input-container>
-            <md-input-container>
-                <md-placeholder>Fax</md-placeholder>
-                <input mdInput formControlName="fax">
-            </md-input-container>
+            <mat-input-container>
+                <mat-placeholder>Mobile</mat-placeholder>
+                <input matInput formControlName="mobile">
+            </mat-input-container>
+            <mat-input-container>
+                <mat-placeholder>Telephone</mat-placeholder>
+                <input matInput formControlName="phone">
+            </mat-input-container>
+            <mat-input-container>
+                <mat-placeholder>Email</mat-placeholder>
+                <input matInput formControlName="email">
+            </mat-input-container>
+            <mat-input-container>
+                <mat-placeholder>Fax</mat-placeholder>
+                <input matInput formControlName="fax">
+            </mat-input-container>
         </ng-container>
     </section>
 
-    <section md-dialog-actions align="end">
-        <button md-button md-dialog-close>
+    <section mat-dialog-actions align="end">
+        <button mat-button mat-dialog-close>
             <i class="icon cancel"></i>
             Cancel
         </button>
-        <button md-button [disabled]="!form.valid" type="submit">
+        <button mat-button [disabled]="!form.valid" type="submit">
             <i class="icon done"></i>
             Done
         </button>

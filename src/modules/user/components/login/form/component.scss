@@ -4,17 +4,17 @@ form {
   @include user-form;
 }
 
-md-placeholder .icon {
+mat-placeholder .icon {
   font-size: 125%;
 }
 
-md-checkbox {
+mat-checkbox {
   display: block;
   width: 100%;
   margin: 1em 0;
 }
 
-md-checkbox {
+mat-checkbox {
   margin: 1em 0;
   padding-bottom: 6px;
 }

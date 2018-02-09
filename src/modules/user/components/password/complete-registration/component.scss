@@ -6,7 +6,7 @@ form {
     @include modal;
 }
 
-.loading md-icon {
+.loading mat-icon {
     @include icon-spin;
 }
 

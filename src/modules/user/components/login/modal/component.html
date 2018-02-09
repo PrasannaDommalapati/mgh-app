@@ -1,10 +1,10 @@
 <section class="wrapper">
-    <section md-dialog-title>
-        <button md-tooltip="Close." md-dialog-close class="icon close"></button>
+    <section mat-dialog-title>
+        <button mat-tooltip="Close." mat-dialog-close class="icon close"></button>
         <h1>Login</h1>
     </section>
 
-    <section md-dialog-content>
+    <section mat-dialog-content>
         <user-login-form (handleLogin)="handleLogin($event)"></user-login-form>
     </section>
 </section>

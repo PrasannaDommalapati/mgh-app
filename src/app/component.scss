@@ -15,15 +15,15 @@ li {
   }
 }
 
-[md-error] {
+[mat-error] {
   color: $error;
   font-style: italic;
 }
 
-[md-warn], .warning {
+[mat-warn], .warning {
   background: $warn;
 }
-md-sidenav {
+mat-sidenav {
   width:304px;
   min-width:256px;
   max-width:304px;

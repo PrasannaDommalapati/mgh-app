@@ -1,34 +1,34 @@
 <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
-    <md-input-container>
-        <md-placeholder><i class="icon user-login"></i> Email address</md-placeholder>
-        <input mdInput
+    <mat-input-container>
+        <mat-placeholder><i class="icon user-login"></i> Email address</mat-placeholder>
+        <input matInput
                id="email"
                formControlName="email"
                type="email">
-    </md-input-container>
+    </mat-input-container>
 
-    <md-input-container md-is-error="!!error">
-        <md-placeholder><i class="icon security"></i> Password</md-placeholder>
-        <input mdInput
+    <mat-input-container mat-is-error="!!error">
+        <mat-placeholder><i class="icon security"></i> Password</mat-placeholder>
+        <input matInput
                id="password"
                formControlName="password"
                type="password">
-    </md-input-container>
+    </mat-input-container>
 
-    <md-checkbox id="loginAcceptTsAndCs"
-                 mdTooltip="Hotels Terms and Conditions."
+    <mat-checkbox id="loginAcceptTsAndCs"
+                 matTooltip="Hotels Terms and Conditions."
                  formControlName="acceptTerms">
-    </md-checkbox>
+    </mat-checkbox>
 
-    <p md-error *ngIf="error">{{ error }}</p>
+    <p mat-error *ngIf="error">{{ error }}</p>
 
     <section class="actions">
-        <button md-button [disabled]="!form.valid || loading" type="submit">
+        <button mat-button [disabled]="!form.valid || loading" type="submit">
             <i class="icon user" *ngIf="!loading"></i>
             <i class="icon refresh loading" *ngIf="loading"></i>
             Login
         </button>
-        <button md-button routerLink="/forgot-password" *ngIf="forgotPass">
+        <button mat-button routerLink="/forgot-password" *ngIf="forgotPass">
             <i class="icon security"></i>
             Forgot Password
         </button>

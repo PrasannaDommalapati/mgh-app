@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 
-import {MdDialogRef} from '@angular/material';
+import {MatDialogRef} from '@angular/material';
 import {PasswordChangeFormFactory} from '../../../../../factories/password/change';
 
 @Component(
@@ -14,7 +14,7 @@ export class ChangePasswordModal {
 
     public form: FormGroup;
 
-    constructor(protected dialogRef: MdDialogRef<ChangePasswordModal>) {
+    constructor(protected dialogRef: MatDialogRef<ChangePasswordModal>) {
     }
 
     ngOnInit() {

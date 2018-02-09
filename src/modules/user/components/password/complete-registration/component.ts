@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {MD_DIALOG_DATA, MdDialogRef} from '@angular/material';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {PasswordNewFormFactory} from '../../../../../factories/password/new';
 
@@ -14,8 +14,8 @@ export class CompleteRegistrationModal {
     public loading: boolean = false;
     public error: string;
 
-    constructor(private dialogRef: MdDialogRef<CompleteRegistrationModal>,
-                @Inject(MD_DIALOG_DATA) private requiredAttributes: any) {
+    constructor(private dialogRef: MatDialogRef<CompleteRegistrationModal>,
+                @Inject(MAT_DIALOG_DATA) private requiredAttributes: any) {
     }
 
     ngOnInit() {

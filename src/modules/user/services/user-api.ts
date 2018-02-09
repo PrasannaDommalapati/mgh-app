@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
 import {Organisation} from '../../../interfaces/Organisation';
 import {RequestOptions} from '@angular/http';
 import {Api} from '../../../app/services/api';
-import {MdDialog, MdDialogConfig} from '@angular/material';
+import {MatDialog, MatDialogConfig} from '@angular/material';
 import {CompleteRegistrationModal} from '../components/password/complete-registration/component';
 import {CompleteRegistration} from '../../../interfaces/complete-registration';
 import {ChangePassword} from '../../../interfaces/change-password';
@@ -24,7 +24,7 @@ export class UserService {
 
     public constructor(private Api: Api,
                        private AuthService: AuthService,
-                       public dialog: MdDialog,
+                       public dialog: MatDialog,
                        private Router: Router) {
     }
 
@@ -257,7 +257,7 @@ export class UserService {
 
         delete userAttributes.email_verified;
 
-        let config = new MdDialogConfig;
+        let config = new MatDialogConfig;
 
         config.disableClose = true;
         config.data         = requiredAttributes;

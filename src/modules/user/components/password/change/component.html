@@ -1,30 +1,30 @@
 <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
-    <section md-dialog-title>
-        <button md-tooltip="Close." md-dialog-close class="icon close"></button>
+    <section mat-dialog-title>
+        <button mat-tooltip="Close." mat-dialog-close class="icon close"></button>
         <h1>Change Password</h1>
     </section>
 
-    <section md-dialog-content>
-        <md-input-container>
-            <md-placeholder>Old Password</md-placeholder>
-            <input mdInput id="oldPassword" formControlName="oldPassword" type="password">
-        </md-input-container>
+    <section mat-dialog-content>
+        <mat-input-container>
+            <mat-placeholder>Old Password</mat-placeholder>
+            <input matInput id="oldPassword" formControlName="oldPassword" type="password">
+        </mat-input-container>
 
         <ng-container formGroupName="newPassword">
-            <md-input-container>
-                <md-placeholder>New Password</md-placeholder>
-                <input mdInput id="newPassword" formControlName="password" type="password">
-                <span md-error *ngIf="error">{{ error }}</span>
-            </md-input-container>
+            <mat-input-container>
+                <mat-placeholder>New Password</mat-placeholder>
+                <input matInput id="newPassword" formControlName="password" type="password">
+                <span mat-error *ngIf="error">{{ error }}</span>
+            </mat-input-container>
 
-            <md-input-container>
-                <md-placeholder>Confirm New Password</md-placeholder>
-                <input mdInput id="confirmPassword" formControlName="confirmPassword" type="password">
-            </md-input-container>
+            <mat-input-container>
+                <mat-placeholder>Confirm New Password</mat-placeholder>
+                <input matInput id="confirmPassword" formControlName="confirmPassword" type="password">
+            </mat-input-container>
         </ng-container>
     </section>
-    <section md-dialog-actions align="end">
-        <button md-button [disabled]="!form.valid || loading" type="submit">
+    <section mat-dialog-actions align="end">
+        <button mat-button [disabled]="!form.valid || loading" type="submit">
             <i *ngIf="!loading" class="icon security"></i>
             <i *ngIf="loading" class="icon refresh loading"></i>
             Change Password

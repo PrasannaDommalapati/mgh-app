@@ -1,22 +1,22 @@
-<md-sidenav-container class="container">
-    <md-sidenav #sidenav mode="over" align="end" (click)="sidenav.close()">
-        <button md-button class="sidenav-link" routerLink="/">
+<mat-sidenav-container class="container">
+    <mat-sidenav #sidenav mode="over" align="end" (click)="sidenav.close()">
+        <button mat-button class="sidenav-link" routerLink="/">
             <i *ngIf="!userLoggedIn()"class="material-icons">home</i>
             <i *ngIf="userLoggedIn()" class="material-icons">dashboard</i>
             {{ userLoggedIn() && 'Dashboard' || 'Home' }}
         </button>
-        <button md-button class="sidenav-link" routerLink="/about" *ngIf="!userLoggedIn()">
+        <button mat-button class="sidenav-link" routerLink="/about" *ngIf="!userLoggedIn()">
             <i class="material-icons">info_outline</i>
             About
         </button>
         <user-menu class="sidenav-link" (click)="sidenav.close()"></user-menu>
-    </md-sidenav>
+    </mat-sidenav>
 
     <header>
-        <md-toolbar>
+        <mat-toolbar>
             <span class="title" routerLink="/">Hotels</span>
-            <i md-tooltip="Open menu." (click)="sidenav.open()" class="material-icons">menu</i>
-        </md-toolbar>
+            <i mat-tooltip="Open menu." (click)="sidenav.open()" class="material-icons">menu</i>
+        </mat-toolbar>
     </header>
 
     <main>
@@ -26,8 +26,8 @@
     <footer>
         <section>
             <section class="account" *ngIf="!userLoggedIn()">
-                <button class="register" md-button routerLink="/register">Register</button>
-                <button class="log-in" md-button routerLink="/login">Log In</button>
+                <button class="register" mat-button routerLink="/register">Register</button>
+                <button class="log-in" mat-button routerLink="/login">Log In</button>
             </section>
             <section>
                 <h1 routerLink="/">Hotels</h1>
@@ -40,13 +40,13 @@
                 </ul>
             </section>
         </section>
-        <md-toolbar>
+        <mat-toolbar>
             <span class="copyright" routerLink="/"><i></i> &copy; Hotels</span>
             <ng-container>
-                <button md-icon-button><i class="icon instagram"></i></button>
-                <button md-icon-button><i class="icon facebook"></i></button>
-                <button md-icon-button><i class="icon twitter"></i></button>
+                <button mat-icon-button><i class="icon instagram"></i></button>
+                <button mat-icon-button><i class="icon facebook"></i></button>
+                <button mat-icon-button><i class="icon twitter"></i></button>
             </ng-container>
-        </md-toolbar>
+        </mat-toolbar>
     </footer>
-</md-sidenav-container>
+</mat-sidenav-container>

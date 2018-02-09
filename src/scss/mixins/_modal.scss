@@ -7,7 +7,7 @@
   flex-direction: column;
   max-height: 95vh;
 
-  [md-dialog-title] {
+  [mat-dialog-title] {
     flex: none;
     padding: 24px;
     margin: 0;
@@ -31,12 +31,12 @@
     }
   }
 
-  [md-dialog-content] {
+  [mat-dialog-content] {
     margin: 0;
     padding: 12px 24px;
     flex: auto;
 
-    button:not([md-icon-button]) {
+    button:not([mat-icon-button]) {
       width: 100%;
       margin: 12px 0;
       text-align: left;
@@ -49,19 +49,19 @@
     }
   }
 
-  [md-dialog-actions] {
+  [mat-dialog-actions] {
     flex: none;
     margin: 0;
     padding: 0 24px 12px;
   }
 
-  md-input-container, md-select, md-checkbox {
+  mat-input-container, mat-select, mat-checkbox {
     display: block;
     width: 100%;
     margin: 1em 0;
   }
 
-  md-select, md-checkbox {
+  mat-select, mat-checkbox {
     margin: 1em 0;
     padding-bottom: 6px;
   }
