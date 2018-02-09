@@ -4,6 +4,10 @@
     <mat-card>
         <mat-card-content>
             Welcome to DashBoard
+            <section class="video" *ngFor="let item of videoList">
+                <h1>{{item.name}}</h1>
+                <iframe width="560" height="315" [src]="getEmbedUrl(item)" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+            </section>
         </mat-card-content>
     </mat-card>
 </section>
