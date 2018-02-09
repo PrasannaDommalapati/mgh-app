@@ -58,6 +58,8 @@ export class UserService {
                             },
                             onFailure:           error => reject(error),
                         });
+
+                console.log(authenticationDetails);
             } else {
                 reject('Could not set cognito user.');
             }
