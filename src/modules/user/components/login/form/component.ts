@@ -31,6 +31,7 @@ export class LoginForm {
             {
                 email:       [null, [Validators.required]],
                 password:    [null, [Validators.required]],
+<<<<<<< HEAD
                 acceptTerms: [null, [this.acceptTermsAndConditions]],
             });
     }
@@ -43,6 +44,11 @@ export class LoginForm {
             },
         };
     }
+=======
+            });
+    }
+
+>>>>>>> 8d34e99f5d18c623c94d08a244645d80b5660559
 
     onSubmit() {
 

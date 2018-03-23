@@ -9,7 +9,11 @@
 }
 
 @mixin user-form {
+<<<<<<< HEAD
   mat-input-container {
+=======
+  mat-form-field {
+>>>>>>> 8d34e99f5d18c623c94d08a244645d80b5660559
     width: 100%;
     margin: 1rem 0;
   }

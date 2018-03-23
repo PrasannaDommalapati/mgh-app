@@ -58,6 +58,10 @@ export class UserService {
                             },
                             onFailure:           error => reject(error),
                         });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8d34e99f5d18c623c94d08a244645d80b5660559
             } else {
                 reject('Could not set cognito user.');
             }
