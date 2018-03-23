@@ -5,6 +5,7 @@ config.seleniumAddress = 'http://selenium-hub:4444/wd/hub';
 
 config.multiCapabilities = [
     {
+<<<<<<< HEAD
         browserName:    'chrome',
         loggingPrefs:   {
             driver:  'OFF',
@@ -17,6 +18,15 @@ config.multiCapabilities = [
         maxInstances:   1,
     },
 
+=======
+        browserName: 'chrome',
+        chromeOptions: {
+            args: ['disable-infobars']
+        },
+        shardTestFiles: true,
+        maxInstances: 5,
+    },
+>>>>>>> a08ef9f175e29eda5ba4819e205ccd74acd73b6a
 ];
 
 exports.config = config;

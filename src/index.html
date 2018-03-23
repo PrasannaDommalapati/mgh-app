@@ -8,8 +8,101 @@
     <link rel="shortcut icon" href="/assets/favicon.ico"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<<<<<<< HEAD
 
     <style>
+=======
+    <link href="https://unpkg.com/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
+
+
+    <style>
+        @font-face {
+            font-family: 'hotels';
+            src: url('/assets/font/hotels.eot');
+            src: url('/assets/font/hotels.eot#iefix') format('embedded-opentype'),
+            url('/assets/font/hotels.woff2') format('woff2'),
+            url('/assets/font/hotels.woff') format('woff'),
+            url('/assets/font/hotels.ttf') format('truetype'),
+            url('/assets/font/hotels.svg#hotels') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .icon {
+            display: inline-block;
+            font-family: hotels;
+            line-height: inherit;
+            font-weight: normal;
+            font-stretch: normal;
+            font-variant: normal;
+            font-style: normal;
+            font-size: 150%;
+            text-align: center;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+
+        .icon.email:before { content: '\e800'; }
+        .icon.user-login:before { content: '\e801'; }
+        .icon.chat:before { content: '\e802'; }
+        .icon.calendar:before { content: '\e803'; }
+        .icon.time:before { content: '\e804'; }
+        .icon.search:before { content: '\e805'; }
+        .icon.rating:before { content: '\e806'; }
+        .icon.document:before { content: '\e807'; }
+        .icon.location:before { content: '\e808'; }
+        .icon.log-in:before { content: '\e809'; }
+        .icon.log-out:before { content: '\e80a'; }
+        .icon.global:before { content: '\e80b'; }
+        .icon.worldwide:before { content: '\e80b'; }
+        .icon.settings:before { content: '\e80c'; }
+        .icon.cloud-backup:before { content: '\e80d'; }
+        .icon.security:before { content: '\e80e'; }
+        .icon.user:before { content: '\e80f'; }
+        .icon.quote-request:before { content: '\e810'; }
+        .icon.dashboard:before { content: '\e811'; }
+        .icon.list:before { content: '\e812'; }
+        .icon.view:before { content: '\e813'; }
+        .icon.quote:before { content: '\e814'; }
+        .icon.edit:before { content: '\e815'; }
+        .icon.vehicle:before { content: '\e816'; }
+        .icon.refresh:before { content: '\e817'; }
+        .icon.refresh.loading {
+            -webkit-animation: icon-spin 2s infinite linear;
+            animation:         icon-spin 2s infinite linear
+        }
+        .icon.waste-facility:before { content: '\e818'; }
+        .icon.delete:before { content: '\e819'; }
+        .icon.done:before { content: '\e81a'; }
+        .icon.save:before { content: '\e81a'; }
+        .icon.cancel:before { content: '\e81b'; }
+        .icon.add:before { content: '\e81c'; }
+        .icon.instagram:before { content: '\e81e'; }
+        .icon.facebook:before { content: '\e81f'; }
+        .icon.twitter:before { content: '\e820'; }
+        .icon.first:before { content: '\e821'; }
+        .icon.previous:before { content: '\e822'; }
+
+        .icon.next:before { content: '\e823'; }
+        .icon.down { transform: rotate(90deg); }
+        .icon.down:before { content: '\e823'; }
+        .icon.up { transform: rotate(270deg); }
+        .icon.up:before { content: '\e823'; }
+
+        .icon.last:before { content: '\e824'; }
+
+        .icon.close:before { content: '\e825'; }
+        .icon.clear:before { content: '\e825'; }
+        .icon.decline:before { content: '\e825'; }
+        .icon.accept:before { content: '\e826'; }
+        .icon.menu:before { content: '\e827'; }
+        .icon.home:before { content: '\e828'; }
+
+
+
+>>>>>>> a08ef9f175e29eda5ba4819e205ccd74acd73b6a
 
         .loading-app {
             position:   absolute;
@@ -77,9 +170,15 @@
 </head>
 <body>
 <hotels-app>
+<<<<<<< HEAD
     <div class="loading-app mat-typography">
         <h1>Hotels
             <span><i class="material-icons">&#xE863;</i> Loading&hellip;</span>
+=======
+    <div class="loading-app">
+        <h1>Hotels
+            <span><i class="icon refresh loading">&#xE863;</i> Loading&hellip;</span>
+>>>>>>> a08ef9f175e29eda5ba4819e205ccd74acd73b6a
         </h1>
     </div>
 </hotels-app>
