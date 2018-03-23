@@ -4,7 +4,7 @@ import {CognitoUser, CognitoUserPool} from 'amazon-cognito-identity-js';
 import * as AWS from 'aws-sdk';
 
 import {environment} from '../../../app/constant/environment';
-import jwtDecode = require('jwt-decode');
+import * as jwtDecode from 'jwt-decode';
 
 @Injectable()
 export class AuthService {

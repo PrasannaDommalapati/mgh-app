@@ -1,20 +1,19 @@
 'use strict';
-
-const argv = require('yargs').argv;
-const fs   = require('fs-extra');
-const path = require('path');
-
+const argv            = require('yargs').argv;
+const fs              = require('fs-extra');
+const glob            = require('glob');
+const firstline       = require('firstline');
 const buildResultsDir = '../build/e2e';
 
-exports.config = {
+let config = {
     getPageTimeout:    6000000,
     allScriptsTimeout: 50000000,
     disableChecks:     true,
-    baseUrl:           'http://.hotels.co.uk',
-    beforeLaunch:      () => fs.removeSync(buildResultsDir),
+    baseUrl:           'http://manage-hotels.co.uk',
+    beforeLaunch:      beforeLaunch,
 
     params: {
-        buildResultsDir: buildResultsDir
+        buildResultsDir: buildResultsDir,
     },
 
     /**
@@ -25,56 +24,70 @@ exports.config = {
     cucumberOpts:  {
         compiler: 'ts:ts-node/register',
         require:  [
-            path.resolve(process.cwd(), './src/helpers/**/*.ts'),
-            path.resolve(process.cwd(), './src/steps/**/*.ts')
+            `${process.cwd()}/src/helpers/**/*.ts`,
+            `${process.cwd()}/src/steps/**/*.ts`,
         ],
         format:   'json:' + buildResultsDir + '/results.json',
-        tags:     argv.tags || ''
     },
-    specs:         getFeatureFiles(),
+    specs:         [],
 
     /**
      * From `protractor-cucumber-framework`, allows cucumber to handle the 199
      * exception and record it appropriately
      */
     ignoreUncaughtExceptions: true,
-
     /**
      * The new reporting plugin
      */
-    plugins: [{
-        package: 'protractor-multiple-cucumber-html-reporter-plugin',
-        options: {
-            automaticallyGenerateReport:  true,
-            metadataKey:                  'deviceProperties',
-            removeExistingJsonReportFile: true,
-            removeOriginalJsonReportFile: true,
-            saveCollectedJSON:            true
-        }
-    }]
+    plugins:                  [
+        {
+            package: 'protractor-multiple-cucumber-html-reporter-plugin',
+            options: {
+                automaticallyGenerateReport:  true,
+                metadataKey:                  'deviceProperties',
+                removeExistingJsonReportFile: true,
+                removeOriginalJsonReportFile: true,
+                saveCollectedJSON:            true,
+                disableLog:                   true,
+            },
+        },
+    ],
 };
 
-/**
- * Get the featurefiles that need to be run based on an command line flag that is passed, if nothing is passed all the
- * featurefiles are run
- *
- * @example:
- *
- * <pre>
- *     // For 1 feature
- *     npm run e2e -- --feature=playground
- *
- *     // For multiple features
- *     npm run e2e -- --feature=playground,dashboard,...
- *
- *     // Else
- *     npm run e2e
- * </pre>
- */
-function getFeatureFiles() {
-    // if (argv.feature) {
-    //     return argv.feature.split(',').map(feature => `${process.cwd()}/e2e-tests/**/${feature}.feature`);
-    // }
+exports.config = config;
 
-    return [`${process.cwd()}/../../../src/**/*.feature`];
+function beforeLaunch() {
+
+    return Promise.all([
+                           fs.remove(buildResultsDir),
+                           setActiveFeatures(),
+                       ]);
+}
+
+function setActiveFeatures() {
+
+    const path = `${process.cwd()}/../features/**/*.feature`;
+
+    return new Promise(resolve => {
+
+        glob(path, null, (error, features) => {
+
+            Promise
+                .all(features.map(feature => {
+
+                    return firstline(feature)
+                        .then(line => featureIsActive(line) && config.specs.push(feature));
+                }))
+                .then(() => resolve());
+        });
+    });
+}
+
+function featureIsActive(line) {
+
+    const tags = argv.hasOwnProperty('cucumberOpts') && argv.cucumberOpts.hasOwnProperty('tags') ? argv.cucumberOpts.tags.toString() : '';
+
+    const wip = !!tags.match(/@wip/);
+
+    return !wip ? !line.match(/@todo/) : !!line.match(/@wip/);
 }

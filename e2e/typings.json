@@ -1,0 +1,5 @@
+{
+    "dependencies": {
+        "mockserver-client": "file:./src/types/mockserver-client/index.d.ts"
+    }
+}
