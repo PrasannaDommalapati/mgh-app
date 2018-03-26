@@ -1,38 +1,15 @@
 @import '../../../../../scss/mixins/user-card';
-<<<<<<< HEAD
-@import '../../../../../scss/mixins/icon-spin';
-=======
->>>>>>> a08ef9f175e29eda5ba4819e205ccd74acd73b6a
 
 form {
   @include user-form;
 }
 
 mat-placeholder .icon {
-<<<<<<< HEAD
   font-size: 125%;
-=======
-  font-size: 100%;
-  text-align: left;
->>>>>>> a08ef9f175e29eda5ba4819e205ccd74acd73b6a
 }
 
 mat-checkbox {
   display: block;
-<<<<<<< HEAD
-  width:   100%;
-  margin:  1em 0;
-}
-
-mat-checkbox {
-  margin:         1em 0;
-  padding-bottom: 6px;
-}
-
-mat-icon.loading {
-  @include icon-spin;
-}
-=======
   width: 100%;
   margin: 1em 0;
 }
@@ -41,4 +18,3 @@ mat-checkbox {
   margin: 1em 0;
   padding-bottom: 6px;
 }
->>>>>>> a08ef9f175e29eda5ba4819e205ccd74acd73b6a

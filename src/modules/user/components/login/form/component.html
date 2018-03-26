@@ -1,29 +1,24 @@
 <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
-    <mat-form-field>
-<<<<<<< HEAD
-        <mat-placeholder>
-            <mat-icon class="material-icons">perm_identity</mat-icon>
-            Email address
-        </mat-placeholder>
-        <input matInput id="loginEmail" formControlName="email" type="email">
-    </mat-form-field>
+    <mat-input-container>
+        <mat-placeholder><i class="icon user-login"></i> Email address</mat-placeholder>
+        <input matInput
+               id="email"
+               formControlName="email"
+               type="email">
+    </mat-input-container>
 
-    <mat-form-field mat-is-error="!!error">
-        <mat-placeholder>
-            <mat-icon class="material-icons">lock_outline</mat-icon>
-            Password
-        </mat-placeholder>
-=======
-        <md-placeholder><i class="icon user-login"></i> Email address</md-placeholder>
-        <input matInput id="loginEmail" formControlName="email" type="email">
-    </mat-form-field>
+    <mat-input-container mat-is-error="!!error">
+        <mat-placeholder><i class="icon security"></i> Password</mat-placeholder>
+        <input matInput
+               id="password"
+               formControlName="password"
+               type="password">
+    </mat-input-container>
 
-    <!--<label for="loginPassword">Password</label>-->
-    <mat-form-field mat-is-error="!!error">
-        <md-placeholder><i class="icon security"></i> Password</md-placeholder>
->>>>>>> a08ef9f175e29eda5ba4819e205ccd74acd73b6a
-        <input matInput id="loginPassword" formControlName="password" type="password">
-    </mat-form-field>
+    <mat-checkbox id="loginAcceptTsAndCs"
+                  matTooltip="Hotels Terms and Conditions."
+                  formControlName="acceptTerms">
+    </mat-checkbox>
 
     <p mat-error *ngIf="error">{{ error }}</p>
 
