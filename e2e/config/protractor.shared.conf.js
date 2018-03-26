@@ -9,7 +9,7 @@ let config = {
     getPageTimeout:    6000000,
     allScriptsTimeout: 50000000,
     disableChecks:     true,
-    baseUrl:           'http://admin.partnerchoice.co.uk',
+    baseUrl:           'http://manage-hotels.co.uk',
     beforeLaunch:      beforeLaunch,
 
     params: {

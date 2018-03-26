@@ -15,6 +15,8 @@ export namespace LoginActions {
 
     export function loginAs(World: World, roles: string[]): Promise<any> {
 
+        console.log('started');
+
         const Api = new MockApi();
 
         const userEmail = faker.internet.email();
