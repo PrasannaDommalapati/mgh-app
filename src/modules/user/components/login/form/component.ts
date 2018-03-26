@@ -29,11 +29,10 @@ export class LoginForm {
 
         this.form = (new FormBuilder).group(
             {
-                email:       [null, [Validators.required]],
-                password:    [null, [Validators.required]],
-            });
+                email: [null, [Validators.required]],
+                password: [null, [Validators.required]],
+            })
     }
-
 
     onSubmit() {
 

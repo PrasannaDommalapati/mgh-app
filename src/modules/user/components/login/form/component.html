@@ -1,4 +1,8 @@
 <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 6fc9d6660af4a0a898e1bf74151891b17a95ee92
     <mat-input-container>
         <mat-placeholder><i class="icon user-login"></i> Email address</mat-placeholder>
         <input matInput
@@ -15,6 +19,26 @@
                type="password">
     </mat-input-container>
 
+<<<<<<< HEAD
+=======
+    <mat-checkbox id="loginAcceptTsAndCs"
+                 matTooltip="Hotels Terms and Conditions."
+                 formControlName="acceptTerms">
+    </mat-checkbox>
+=======
+    <mat-form-field>
+        <md-placeholder><i class="icon user-login"></i> Email address</md-placeholder>
+        <input matInput id="loginEmail" formControlName="email" type="email">
+    </mat-form-field>
+
+    <!--<label for="loginPassword">Password</label>-->
+    <mat-form-field mat-is-error="!!error">
+        <md-placeholder><i class="icon security"></i> Password</md-placeholder>
+        <input matInput id="loginPassword" formControlName="password" type="password">
+    </mat-form-field>
+>>>>>>> 8d34e99f5d18c623c94d08a244645d80b5660559
+
+>>>>>>> 6fc9d6660af4a0a898e1bf74151891b17a95ee92
     <p mat-error *ngIf="error">{{ error }}</p>
 
     <section class="actions">
