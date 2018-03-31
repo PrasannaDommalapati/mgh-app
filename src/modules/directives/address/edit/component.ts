@@ -26,6 +26,8 @@ export class EditAddress {
 
     public onSubmit() {
 
+        console.log('address',this.form.value)
+
         this.dialogRef.close(this.form.value);
     }
 

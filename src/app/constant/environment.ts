@@ -7,6 +7,9 @@ export const environment = {
         user: {
             organisations: (organisationId?: string) => environment.endpoint.base.organisations('user', 'me'),
         },
+        admin: {
+            organisations: (organisationId?: string) => environment.endpoint.base.organisations('user'),
+        },
         base: {
             organisations: (role: string, organisationId?: string) => {
 

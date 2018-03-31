@@ -10,6 +10,7 @@
             About
         </button>
         <user-menu class="sidenav-link" (click)="sidenav.close()"></user-menu>
+        <admin-menu *ngIf="inGroup('Admin')" class="sidenav-link" (click)="sidenav.close()"></admin-menu>
     </mat-sidenav>
 
     <header>

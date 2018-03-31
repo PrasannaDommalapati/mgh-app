@@ -1,8 +1,9 @@
 import {Address} from './Address';
 
 export interface Organisation {
-    organisationId:string
-    name: string,
+    organisationId?:string,
+    notes:string,
+    organisationName: string,
     address: Address,
     carrierRegistrationNumber?: string
 }

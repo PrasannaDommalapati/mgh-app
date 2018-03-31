@@ -14,8 +14,9 @@ import {UserModule} from '../modules/user/module';
 import {Welcome} from './components/pages/welcome/component';
 import {About} from './components/pages/about/component';
 
-import {Dashboard} from './components/dashboard/component';
 import {AwSnackBar} from './services/aw-snack-bar';
+import {AdminModule} from "../modules/admin/module";
+import {Dashboard} from "./components/dashboard/component";
 
 @NgModule(
     {
@@ -30,13 +31,14 @@ import {AwSnackBar} from './services/aw-snack-bar';
                     storageType: 'localStorage',
                 }),
             UserModule,
+            AdminModule,
         ],
         declarations:    [
             AppComponent,
 
             Welcome,
             About,
-            Dashboard,
+            Dashboard
         ],
         entryComponents: [
         ],
