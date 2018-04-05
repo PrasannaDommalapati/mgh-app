@@ -1,10 +1,9 @@
 @import '../../../../../scss/mixins/user-card';
 
 form {
-  @include user-form;
+    @include user-form;
 }
-
-
-mat-placeholder .icon {
-  font-size: 125%;
+.material-icons {
+    font-size:      125%;
+    vertical-align: text-bottom;
 }

@@ -8,6 +8,7 @@ export interface envParamsInterface {
         identityPoolId: string,
     },
     endpoints: {
-        user: string
+        user: string,
+        admin:string,
     },
 };

@@ -1,0 +1,12 @@
+@import '../../../../scss/mixins/modal';
+
+.wrapper{
+  @include modal;
+}
+mat-form-field {
+  width:100%;
+}
+button.mat-button {
+  width:100px;
+}
+

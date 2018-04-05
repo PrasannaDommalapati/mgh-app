@@ -6,6 +6,7 @@ import {Organisation} from '../../interfaces/Organisation';
 
 @Injectable()
 export abstract class OrganisationApi {
+
     public constructor(private Api: Api) {
 
     }

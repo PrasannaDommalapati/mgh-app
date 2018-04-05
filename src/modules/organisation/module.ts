@@ -1,9 +1,10 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {NgModule}             from '@angular/core';
+import {CommonModule}         from '@angular/common';
 import {HotelsMaterialModule} from '../material.module';
-import {ReactiveFormsModule} from '@angular/forms';
-import {routing} from '../../app/routing.module';
-import {CreateOrganisation} from "./components/create/component";
+import {ReactiveFormsModule}  from '@angular/forms';
+import {routing}              from '../../app/routing.module';
+import {CreateOrganisation}   from "./components/create/component";
+import {OrganisationList}     from './components/list/component';
 
 
 @NgModule(
@@ -16,16 +17,19 @@ import {CreateOrganisation} from "./components/create/component";
         ],
         declarations:    [
 
-            CreateOrganisation
+            CreateOrganisation,
+            OrganisationList
 
         ],
         entryComponents: [
-            CreateOrganisation
+            CreateOrganisation,
+            OrganisationList
         ],
         providers:       [
 
         ],
         exports:         [
+            OrganisationList
         ],
     },
 )
