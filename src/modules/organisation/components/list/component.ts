@@ -1,5 +1,12 @@
 import {Component}            from '@angular/core';
+import {
+    MatDialog,
+    MatDialogConfig,
+}                             from '@angular/material';
+import {BehaviorSubject}      from 'rxjs/BehaviorSubject';
+import {Organisation}         from '../../../../interfaces/Organisation';
 import {AdminOrganisationApi} from '../../../admin/services/organisation-api';
+import {CreateOrganisation}   from '../create/component';
 
 @Component({
                selector:   'organisation-list',
@@ -8,23 +15,49 @@ import {AdminOrganisationApi} from '../../../admin/services/organisation-api';
            })
 export class OrganisationList {
 
-    public Organisations: any;
+    private _Organisations: BehaviorSubject<Organisation[]> = new BehaviorSubject([]);
 
+    public Organisations: Organisation[];
 
-    public displayedColumns = [
-        'name',
-        'email',
-        'notes',
-    ];
-
-    constructor(protected OrganisationApi: AdminOrganisationApi) {
+    constructor(private Dialog:MatDialog,protected OrganisationApi: AdminOrganisationApi) {
 
     }
 
     ngOnInit() {
+        this._Organisations.subscribe(items => this.Organisations = items);
 
-        this.OrganisationApi.list()
-            .then(organisations => this.Organisations = organisations);
+        this.load();
 
+    }
+
+    protected load() {
+
+        this.OrganisationApi
+            .list()
+            .then((items: Organisation[]) => {
+
+                this._Organisations.next(items);
+            });
+    }
+
+
+    public edit(organisationId: string) {
+
+        let config = new MatDialogConfig;
+
+        config.disableClose = true;
+
+        config.data = organisationId;
+
+        let dialogRef = this.Dialog.open(CreateOrganisation, config);
+
+        dialogRef
+            .afterClosed()
+            .subscribe((Organisation:Organisation) => {
+                !!Organisation.organisationId &&
+                this.OrganisationApi
+                    .save(Organisation)
+                    .then(() => this.load());
+            });
     }
 }

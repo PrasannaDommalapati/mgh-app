@@ -7,19 +7,19 @@
     <section mat-dialog-content>
         <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
             <mat-form-field>
-                <mat-placeholder>Organisation Name:</mat-placeholder>
+                <mat-placeholder>Organisation Name</mat-placeholder>
                 <input matInput id="name" formControlName="name">
             </mat-form-field>
             <mat-form-field>
                 <mat-placeholder>Notes</mat-placeholder>
                 <input matInput id="notes" formControlName="notes">
             </mat-form-field>
-            <label for="address">Organisation Address:</label>
-            <button mat-raised-button id="address" type="button" (click)="editAddress()">
+            <label for="address">Organisation Address</label>
+            <button mat-button color="red" id="address" type="button" (click)="editAddress()">
                 <i class="icon edit"></i>
             </button>
             <mat-form-field>
-                <mat-placeholder>Carrier Registration Number:</mat-placeholder>
+                <mat-placeholder>Carrier Registration Number</mat-placeholder>
                 <input id="carrierRegistration" formControlName="carrierRegistration" matInput>
             </mat-form-field>
 

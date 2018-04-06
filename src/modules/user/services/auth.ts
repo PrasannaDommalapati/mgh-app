@@ -19,6 +19,7 @@ export class AuthService {
     }
 
     public getAuthToken(): Promise<string> {
+
         return new Promise((resolve, reject) => {
 
             this.setCognitoUser();
@@ -30,6 +31,7 @@ export class AuthService {
                         reject(err);
                         return;
                     }
+
                     resolve(session.idToken.jwtToken);
                 });
         });

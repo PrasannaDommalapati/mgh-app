@@ -21,7 +21,9 @@ export abstract class OrganisationApi {
 
     public get (organisationId: string) {
 
+
         let endpoint = this.getEndpoint(organisationId);
+
         let options  = new RequestOptions({method: 'GET'});
 
         return this.Api.request(endpoint, options);
@@ -43,6 +45,7 @@ export abstract class OrganisationApi {
     protected abstract getEndpoint(organisationId?: string):string;
 
     private post(Organisation: Organisation) {
+
 
         let endpoint = this.getEndpoint();
         let options  = new RequestOptions({method: 'POST', body: Organisation});

@@ -14,13 +14,11 @@ export class AdminDashboard {
     constructor(private Dialog:MatDialog,
     private OrganisationApi:AdminOrganisationApi) {}
 
-    public edit(organisationId?: string) {
+    public edit() {
 
         let config = new MatDialogConfig;
 
-        config.disableClose = false;
-
-        config.data = organisationId;
+        config.disableClose = true;
 
         this.Dialog.open(CreateOrganisation, config)
             .afterClosed()
