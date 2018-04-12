@@ -17,11 +17,11 @@ import {OrganisationFormFactory} from '../../../../factories/organisation';
 import {Address}                 from '../../../../interfaces/Address';
 
 @Component({
-               selector:   'create-organisation',
+               selector:   'edit-organisation',
                templateUrl:'component.html',
                styleUrls:  ['component.scss'],
            })
-export class CreateOrganisation {
+export class EditOrganisation {
 
     public form: FormGroup;
     public organisationId: string;
@@ -35,16 +35,17 @@ export class CreateOrganisation {
     constructor(
         private Dialog: MatDialog,
         private OrganisationApi: AdminOrganisationApi,
-        protected dialogRef: MatDialogRef<CreateOrganisation>,
+        protected dialogRef: MatDialogRef<EditOrganisation>,
         @Inject(MAT_DIALOG_DATA) public data: any,
     ) {
-        this.form = OrganisationFormFactory.form();
 
     }
 
     ngOnInit() {
 
         this.organisationId = this.data;
+
+        this.form = OrganisationFormFactory.form();
 
         !!this.organisationId && this.set();
 
@@ -75,6 +76,7 @@ export class CreateOrganisation {
 
         config.disableClose = false;
         config.data         = {
+            address:       this.form.get('address').value,
             contactDetails:true,
         };
         let dialogRef       = this.Dialog.open(EditAddress, config);

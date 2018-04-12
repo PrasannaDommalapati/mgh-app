@@ -1,18 +1,21 @@
-import {Component} from '@angular/core';
-import {MatDialog, MatDialogConfig} from "@angular/material";
-import {AdminOrganisationApi} from "../../services/organisation-api";
-import {CreateOrganisation} from "../../../organisation/components/create/component";
+import {Component}            from '@angular/core';
+import {
+    MatDialog,
+    MatDialogConfig,
+}                             from '@angular/material';
+import {Organisation}         from '../../../../interfaces/Organisation';
+import {AdminOrganisationApi} from '../../services/organisation-api';
+import {EditOrganisation}     from '../../../organisation/components/edit/component';
 
-@Component(
-    {
-        selector:    'admin-dashboard',
-        templateUrl: 'component.html',
-        styleUrls:   ['component.scss'],
-    })
+@Component({
+               selector:   'admin-dashboard',
+               templateUrl:'component.html',
+               styleUrls:  ['component.scss'],
+           })
 export class AdminDashboard {
 
-    constructor(private Dialog:MatDialog,
-    private OrganisationApi:AdminOrganisationApi) {}
+    constructor(private Dialog: MatDialog, private OrganisationApi: AdminOrganisationApi) {
+    }
 
     public edit() {
 
@@ -20,11 +23,12 @@ export class AdminDashboard {
 
         config.disableClose = true;
 
-        this.Dialog.open(CreateOrganisation, config)
-            .afterClosed()
-            .subscribe(organisation => this.OrganisationApi.save(organisation));
+        let dialogRef = this.Dialog.open(EditOrganisation, config);
+
+        dialogRef.afterClosed()
+            .subscribe((Organisation: Organisation) => {
+                !!Organisation.organisationId && this.OrganisationApi.save(Organisation);
+            });
     }
-
-
 
 }

@@ -6,7 +6,7 @@ import {
 import {BehaviorSubject}      from 'rxjs/BehaviorSubject';
 import {Organisation}         from '../../../../interfaces/Organisation';
 import {AdminOrganisationApi} from '../../../admin/services/organisation-api';
-import {CreateOrganisation}   from '../create/component';
+import {EditOrganisation}   from '../edit/component';
 
 @Component({
                selector:   'organisation-list',
@@ -19,7 +19,7 @@ export class OrganisationList {
 
     public Organisations: Organisation[];
 
-    constructor(private Dialog:MatDialog,protected OrganisationApi: AdminOrganisationApi) {
+    constructor(private Dialog: MatDialog, protected OrganisationApi: AdminOrganisationApi) {
 
     }
 
@@ -40,7 +40,6 @@ export class OrganisationList {
             });
     }
 
-
     public edit(organisationId: string) {
 
         let config = new MatDialogConfig;
@@ -49,15 +48,24 @@ export class OrganisationList {
 
         config.data = organisationId;
 
-        let dialogRef = this.Dialog.open(CreateOrganisation, config);
+        let dialogRef = this.Dialog.open(EditOrganisation, config);
 
         dialogRef
             .afterClosed()
-            .subscribe((Organisation:Organisation) => {
-                !!Organisation.organisationId &&
+            .subscribe((Organisation: Organisation) => {
+
+                console.log('organisation',Organisation)
                 this.OrganisationApi
                     .save(Organisation)
                     .then(() => this.load());
             });
+    }
+
+    public remove(organisationId: string) {
+
+        confirm('Are you sure you want to delete an organisation?') && this.OrganisationApi
+            .remove(organisationId)
+            .then(() => this.load());
+
     }
 }

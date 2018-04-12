@@ -4,7 +4,7 @@ import {DirectivesModule}     from '../directives/module';
 import {HotelsMaterialModule} from '../material.module';
 import {ReactiveFormsModule}  from '@angular/forms';
 import {routing}              from '../../app/routing.module';
-import {CreateOrganisation}   from "./components/create/component";
+import {EditOrganisation}   from "./components/edit/component";
 import {OrganisationList}     from './components/list/component';
 
 
@@ -19,12 +19,12 @@ import {OrganisationList}     from './components/list/component';
         ],
         declarations:    [
 
-            CreateOrganisation,
+            EditOrganisation,
             OrganisationList
 
         ],
         entryComponents: [
-            CreateOrganisation,
+            EditOrganisation,
             OrganisationList
         ],
         providers:       [
