@@ -40,21 +40,20 @@ export class OrganisationList {
             });
     }
 
-    public edit(organisationId: string) {
+    public edit(organisationId?: string) {
 
         let config = new MatDialogConfig;
 
         config.disableClose = true;
 
-        config.data = organisationId;
+        !!organisationId && (config.data = organisationId);
 
         let dialogRef = this.Dialog.open(EditOrganisation, config);
 
         dialogRef
             .afterClosed()
             .subscribe((Organisation: Organisation) => {
-
-                console.log('organisation',Organisation)
+              
                 this.OrganisationApi
                     .save(Organisation)
                     .then(() => this.load());

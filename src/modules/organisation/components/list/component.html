@@ -1,4 +1,7 @@
 <ng-container>
+  <section class="organisation" align="end">
+      <button mat-icon-button (click)="edit()"><i class="material-icons">add</i></button>
+  </section>
     <mat-card *ngFor="let organisation of Organisations">
         <address-summary [Address]="organisation.address" [title]="organisation.address.name"></address-summary>
         <mat-card-actions align="end">
@@ -9,4 +12,3 @@
         </mat-card-actions>
     </mat-card>
 </ng-container>
-

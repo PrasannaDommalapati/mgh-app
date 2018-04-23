@@ -29,7 +29,7 @@ export abstract class OrganisationApi {
         return this.Api.request(endpoint, options);
     }
 
-    public save(Organisation: Organisation) {
+    public save(Organisation?: Organisation) {
 
         return !!Organisation.organisationId ? this.put(Organisation.organisationId, Organisation) : this.post(Organisation);
     }

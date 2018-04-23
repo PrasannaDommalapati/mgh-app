@@ -14,7 +14,7 @@ export class OrganisationFormFactory {
 
         let FormGroup = _FormBuilder.group(
             {
-                name: [null, [Validators.required]],
+                organisationName: [null, [Validators.required]],
                 notes: [null, [Validators.required]],
                 address:[null, [Validators.required, AddressFormFactory.validateAddress]],
                 carrierRegistration: [null, [Validators.required]],

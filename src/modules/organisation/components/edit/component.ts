@@ -25,12 +25,6 @@ export class EditOrganisation {
 
     public form: FormGroup;
     public organisationId: string;
-    private _organisation: BehaviorSubject<Organisation> = new BehaviorSubject({
-                                                                                   name:               null,
-                                                                                   notes:              null,
-                                                                                   address:            null,
-                                                                                   carrierRegistration:null,
-                                                                               });
 
     constructor(
         private Dialog: MatDialog,
@@ -57,8 +51,6 @@ export class EditOrganisation {
         this.OrganisationApi
             .get(this.organisationId)
             .then((Organisation: Organisation) => {
-
-                console.log(Organisation)
 
                 !!Organisation && Object.keys(Organisation).forEach(name => {
                     if (this.form.controls[name]) {
@@ -92,7 +84,12 @@ export class EditOrganisation {
 
     public onSubmit() {
 
-        this.dialogRef.close(this.form.value);
+
+        let form = Object.assign({}, this.form.value);
+
+        form.organisationId = !form['organisationId'] ? this.organisationId :form['organisationId'];
+
+        this.dialogRef.close(form);
 
     }
 
