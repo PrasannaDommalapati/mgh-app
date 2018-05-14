@@ -5,8 +5,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
-$hotels-primary: mat-palette($mat-blue-grey,        300);
-$hotels-accent:  mat-palette($mat-light-green, 300);
+$hotels-primary: mat-palette($mat-blue-grey, 300);
+$hotels-accent: mat-palette($mat-light-green, 300);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $hotels-theme: mat-light-theme($hotels-primary, $hotels-accent);

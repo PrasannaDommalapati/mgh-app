@@ -1,3 +1,7 @@
+import {
+    HTTP_INTERCEPTORS,
+    HttpClientModule,
+} from '@angular/common/http';
 import {NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
@@ -23,6 +27,7 @@ import {Dashboard} from "./components/dashboard/component";
         imports:         [
             CommonModule,
             HttpModule,
+            HttpClientModule,
             routing,
             HotelsMaterialModule,
             LocalStorageModule.withConfig(
@@ -45,7 +50,7 @@ import {Dashboard} from "./components/dashboard/component";
         providers:       [
             {provide: LOCALE_ID, useValue: 'en-GB'},
             appRouting,
-            AwSnackBar
+            AwSnackBar,
         ],
         bootstrap:       [
             AppComponent,
