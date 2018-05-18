@@ -35,3 +35,6 @@ jobs:
 
       # run tests!
       - run: yarn test
+      # run e2e
+      - shell: cd usr/src/app/e2e
+      - run: yarn e2e
