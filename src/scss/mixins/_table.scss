@@ -3,7 +3,7 @@
 //@import '~@angular/material/button/button-base';
 @import '../../app/component';
 
-$background: map-get($anywaste-theme, background);
+$background: map-get($hotels-theme, background);
 
 @mixin tbody {
 

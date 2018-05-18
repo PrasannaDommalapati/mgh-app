@@ -14,7 +14,9 @@ export class EditAddress {
     public contactDetails: boolean;
     public form: FormGroup;
 
-    constructor(protected  dialogRef: MatDialogRef<EditAddress>, @Inject(MAT_DIALOG_DATA) public data: any) {
+    constructor(protected  dialogRef: MatDialogRef<EditAddress>,
+       @Inject(MAT_DIALOG_DATA) public data: any) {
+         
         this.form = AddressFormFactory.form();
     }
 

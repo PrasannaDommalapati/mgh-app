@@ -7,6 +7,9 @@ import {Api} from '../../app/services/api';
 import {DirectivesModule} from '../directives/module';
 import {routing} from '../../app/routing.module';
 import {AdminOrganisationApi} from './services/organisation-api';
+import {OrganisationModule} from "../organisation/module";
+import {AdminMenu} from "./components/menu/component";
+import {AdminDashboard} from "./components/dashboard/component";
 
 @NgModule(
     {
@@ -15,9 +18,11 @@ import {AdminOrganisationApi} from './services/organisation-api';
             routing,
             HotelsMaterialModule,
             DirectivesModule,
+            OrganisationModule
         ],
         declarations:    [
-
+            AdminDashboard,
+            AdminMenu
         ],
         entryComponents: [],
         providers:       [
@@ -29,6 +34,8 @@ import {AdminOrganisationApi} from './services/organisation-api';
             CUSTOM_ELEMENTS_SCHEMA,
         ],
         exports:         [
+            AdminDashboard,
+            AdminMenu
         ],
     },
 )

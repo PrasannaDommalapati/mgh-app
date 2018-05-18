@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {UserService} from '../../../modules/user/services/user-api';
+import {UserService} from "../../../modules/user/services/user-api";
 
 @Component(
     {
@@ -16,7 +16,5 @@ export class Dashboard {
 
         return this.UserService.isInGroup(group);
     }
-
-
 
 }

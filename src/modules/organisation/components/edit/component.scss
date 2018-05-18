@@ -1,0 +1,13 @@
+@import '../../../../scss/mixins/modal';
+
+.wrapper{
+  @include modal;
+}
+mat-form-field:not([mat-button]) {
+  width:100%;
+}
+
+.address  {
+    width: 100%;
+}
+

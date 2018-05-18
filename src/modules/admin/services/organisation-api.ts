@@ -7,6 +7,6 @@ export class AdminOrganisationApi extends OrganisationApi {
 
     protected getEndpoint(organisationId?: string) {
 
-        return environment.endpoint.user.organisations(organisationId);
+        return environment.endpoint.admin.organisations(organisationId);
     }
 }

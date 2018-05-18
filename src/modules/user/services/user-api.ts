@@ -229,8 +229,6 @@ export class UserService {
 
         return new Promise((resolve, reject) => {
 
-            console.log(this.AuthService.setCognitoUser());
-
             if (this.AuthService.setCognitoUser()) {
 
                 this.AuthService

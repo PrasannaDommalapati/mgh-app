@@ -1,21 +1,12 @@
 @import '../../../../../scss/mixins/user-card';
 
 form {
-  @include user-form;
+    @include user-form;
 }
 
 mat-placeholder .icon {
-<<<<<<< HEAD
-  font-size: 100%;
-}
-
-=======
-<<<<<<< HEAD
-  font-size: 125%;
-=======
   font-size: 100%;
   text-align: left;
->>>>>>> 8d34e99f5d18c623c94d08a244645d80b5660559
 }
 
 mat-checkbox {
@@ -27,9 +18,9 @@ mat-checkbox {
 mat-checkbox {
   margin: 1em 0;
   padding-bottom: 6px;
-<<<<<<< HEAD
 }
-=======
+
+.material-icons {
+    font-size:      125%;
+    vertical-align: text-bottom;
 }
->>>>>>> 8d34e99f5d18c623c94d08a244645d80b5660559
->>>>>>> 6fc9d6660af4a0a898e1bf74151891b17a95ee92

@@ -1,0 +1,19 @@
+@import '../../../../../src/scss/mixins/data-list';
+
+@include data-list-horizontal;
+
+button.mat-button {
+  width:100px;
+}
+.post {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+mat-card-title {
+    text-transform: uppercase;
+}
+
+mat-card {
+    margin-bottom: 10px;
+}
+

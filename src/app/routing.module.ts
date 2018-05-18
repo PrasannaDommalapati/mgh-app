@@ -8,7 +8,7 @@ import {Login} from '../modules/user/components/login/component';
 import {AuthGuard} from '../modules/user/services/auth-guard';
 import {Registration} from '../modules/user/components/register/component';
 import {ForgotPasswordModal} from '../modules/user/components/password/forgot/component';
-import {Dashboard} from './components/dashboard/component';
+import {Dashboard} from "./components/dashboard/component";
 
 const routes: Routes = [
     {

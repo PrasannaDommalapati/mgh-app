@@ -11,5 +11,6 @@ export const envParams: envParamsInterface = {
     },
     endpoints: {
         user: null,
+        admin: null,
     },
 };

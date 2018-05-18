@@ -1,13 +1,4 @@
-<h1><i class="icon dashboard"></i> Dashboard</h1>
-<dashboard></dashboard>
+<h1><i class="material-icons">dashboard</i> Dashboard</h1>
+<admin-dashboard *ngIf="inGroup('Admin')"></admin-dashboard>
+<!--<user-dashboard *ngIf="!inGroup('Admin')"></user-dashboard>-->
 
-
-<h1><mat-icon class="material-icons">dashboard</mat-icon> Dashboard</h1>
-<section>
-
-    <mat-card>
-        <mat-card-content>
-            Welcome to DashBoard
-        </mat-card-content>
-    </mat-card>
-</section>

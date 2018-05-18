@@ -1,10 +1,20 @@
+import {
+    HttpClient,
+    HttpHeaders,
+    HttpResponse,
+}                   from '@angular/common/http';
 import {Injectable} from '@angular/core';
 
-import {AuthService} from '../../modules/user/services/auth';
-import {Http, RequestOptions, Headers, Response} from '@angular/http';
-import {Organisation} from '../../interfaces/Organisation';
-import {environment} from '../constant/environment';
-import {Observable} from 'rxjs/Observable';
+import {AuthService}         from '../../modules/user/services/auth';
+import {
+    Http,
+    RequestOptions,
+    Headers,
+    Response,
+}                            from '@angular/http';
+import {Organisation}        from '../../interfaces/Organisation';
+import {environment}         from '../constant/environment';
+import {Observable}          from 'rxjs/Observable';
 import {LocalStorageService} from 'angular-2-local-storage';
 
 const UNORTHORIZED = 401;
@@ -18,7 +28,9 @@ export class Api {
 
     public constructor(private LocalStorageService: LocalStorageService,
                        private AuthService: AuthService,
-                       public Http: Http) {
+                       public Http: Http,
+                       private HttpClient: HttpClient,
+    ) {
 
     }
 
@@ -62,35 +74,32 @@ export class Api {
             this.AuthService.getAuthToken()
                 .then((authToken) => {
 
-                          let headers = new Headers();
-                          headers.append('Authorization', authToken);
+                    let headers = new Headers();
+                    headers.append('Authorization', authToken);
 
-                          this.Http
-                              .request(endpoint, options.merge({headers: headers}))
-                              .map((Response: Response) => {
+                    console.log(headers);
 
-                                  return this.checkApiVersion(Response.headers.get('Content-Version'))
-                                             .then(
-                                                 () => Response.json(),
-                                                 () => Observable.throw(Response),
-                                             );
 
-                              })
-                              .catch((Response: Response) => {
+                    this.Http
+                        .request(endpoint, options.merge({headers:headers}))
+                        .map((Response: Response) => {
 
-                                  return Observable.throw(Response);
-                              })
-                              .subscribe(
-                                  data => resolve(data),
-                                  Response => reject(Response.json()),
-                              );
-                      },
-                      error => reject(error),
-                );
+                            return this.checkApiVersion(Response.headers.get('Content-Version'))
+                                .then(() => Response.json(), () => Observable.throw(Response),);
+
+                        })
+                        .catch((Response: Response) => {
+
+                            return Observable.throw(Response);
+                        })
+                        .subscribe(data => resolve(data), Response => reject(Response.json()),);
+                }, error => reject(error),);
         });
     }
 
-    public s3PutObject(putUrl:string, putObject:Blob) {
+
+
+    public s3PutObject(putUrl: string, putObject: Blob) {
 
         return new Promise((resolve, reject) => {
 
@@ -128,10 +137,7 @@ export class Api {
 
                         return Observable.throw(message);
                     })
-                    .subscribe(
-                        () => resolve(),
-                        error => reject(error),
-                    );
+                    .subscribe(() => resolve(), error => reject(error),);
 
             } catch (error) {
 
@@ -147,13 +153,10 @@ export class Api {
             try {
 
                 let endpoint = environment.endpoint.user.organisations('me');
-                let options  = new RequestOptions({method: 'GET'});
+                let options  = new RequestOptions({method:'GET'});
 
                 this.request(endpoint, options)
-                    .then(
-                        (Organisation: Organisation) => resolve(Organisation),
-                        error => reject(new Error(error)),
-                    );
+                    .then((Organisation: Organisation) => resolve(Organisation), error => reject(new Error(error)),);
 
             } catch (error) {
 
