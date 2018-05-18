@@ -92,8 +92,8 @@ export class Api {
 
                             return Observable.throw(Response);
                         })
-                        .subscribe(data => resolve(data), Response => reject(Response.json()),);
-                }, error => reject(error),);
+                        .subscribe(data => resolve(data), (Response:any) => reject(Response.json()),);
+                }, (error:Error) => reject(error),);
         });
     }
 
@@ -137,7 +137,7 @@ export class Api {
 
                         return Observable.throw(message);
                     })
-                    .subscribe(() => resolve(), error => reject(error),);
+                    .subscribe(() => resolve(), (error:any) => reject(error),);
 
             } catch (error) {
 
