@@ -16,9 +16,6 @@ jobs:
 
     working_directory: ~/repo
   build:
-    docker:
-      - image: headforwardsspd/node-cd:latest
-
     steps:
       - checkout
 
@@ -37,8 +34,5 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests!
-      - run: yarn test
+      - run: yarn build
       # run e2e
-
-
-
